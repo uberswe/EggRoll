@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace EggRollGameLib
 {
@@ -11,6 +12,9 @@ namespace EggRollGameLib
     {
         public KeyboardState ks, pks;
         public MouseState ms, pms;
+        public TouchCollection tc;
+        int maxTouchCount; 
+
 
         public void Initialize()
         {
@@ -18,6 +22,9 @@ namespace EggRollGameLib
             pks = new KeyboardState();
             ms = new MouseState();
             pms = new MouseState();
+            //indicates how many simultaneous touch inputs the current screen can handle. 
+            maxTouchCount = TouchPanel.GetCapabilities().MaximumTouchCount; 
+                        
         }
         public void Update()
         {
@@ -25,7 +32,21 @@ namespace EggRollGameLib
             ks = Keyboard.GetState();
             pms = ms;
             ms = Mouse.GetState();
+            tc = TouchPanel.GetState(); 
         }
+
+        /// <summary>
+        /// returns a collection of touch locations, containing Position, TouchState etc. 
+        /// </summary>
+        public List<TouchLocation> TouchLocations() 
+        {
+            List<TouchLocation> l = new List<TouchLocation>();
+            for (int i = 0; i < maxTouchCount; i++)
+                l.Add(tc[i]); 
+            return l; 
+        }
+
+        
 
         /// <summary>
         /// true when a key is pressed and released again
