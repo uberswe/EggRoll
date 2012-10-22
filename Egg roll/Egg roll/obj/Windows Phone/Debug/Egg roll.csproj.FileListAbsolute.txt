@@ -14,9 +14,3 @@ bin\Windows Phone\Debug\
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb
-C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
-C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
-C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
-C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
-bin\Windows Phone\Debug\

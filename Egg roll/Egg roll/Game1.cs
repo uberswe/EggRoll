@@ -29,6 +29,7 @@ namespace Egg_roll
 
             // Extend battery life under lock.
             InactiveSleepTime = TimeSpan.FromSeconds(1);
+            
         }
 
         protected override void Initialize()

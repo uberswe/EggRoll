@@ -13,6 +13,7 @@ namespace EggRollGameLib.ClassFiles
     {
         OnScreenMessages onScreenMessages;
         float elaps, totaltPlayTime;
+        Input input; 
         List<Character> characters;
         Player player; 
 
@@ -21,14 +22,16 @@ namespace EggRollGameLib.ClassFiles
             Stuff.Initialize(content, graphicsManager);
             onScreenMessages = new OnScreenMessages();
             Camera2d.Position = Stuff.ScreenCenter;
+            input = new Input(); 
             characters = new List<Character>();
-            player = new Player(characters); 
+            player = new Player(input, characters); 
         }
 
         public void Update(GameTime gameTime)
         {
             elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            totaltPlayTime += elaps; 
+            totaltPlayTime += elaps;
+            input.Update(); 
             onScreenMessages.Update(elaps);
 
             int c = characters.Count;
@@ -36,6 +39,7 @@ namespace EggRollGameLib.ClassFiles
             {
                 characters[i].Update(elaps); 
             }
+            player.Update(elaps); 
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphics)
@@ -49,6 +53,7 @@ namespace EggRollGameLib.ClassFiles
             {
                 characters[i].Draw(spriteBatch); 
             }
+            player.Draw(spriteBatch); 
 
             spriteBatch.End();
         }

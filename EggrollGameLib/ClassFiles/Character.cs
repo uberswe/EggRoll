@@ -9,10 +9,10 @@ namespace EggRollGameLib
 {
     public class Character
     {
-        public Sprite sprite;
-        public Vector2 position;
-        public float life;
-        public bool remove, special;
+        protected Sprite sprite;
+        protected Vector2 position, direction;
+        protected float life, speed;
+        protected bool remove, special;
         protected List<Character> characters; 
 
         public Character()
@@ -26,7 +26,7 @@ namespace EggRollGameLib
 
         public virtual void Update(float elaps)
         {
-
+            position += direction * speed * elaps; 
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
