@@ -17,7 +17,6 @@ namespace EggRollGameLib
 
         public Character()
         {
-            sprite = new Sprite("pixel"); 
         }
 
         public virtual void LoadContent()

@@ -65,6 +65,7 @@
     <Compile Include="ClassFiles\Input.cs" />
     <Compile Include="ClassFiles\MainScene.cs" />
     <Compile Include="ClassFiles\OnScreenMessages.cs" />
+    <Compile Include="ClassFiles\Player.cs" />
     <Compile Include="ClassFiles\Sprite.cs" />
     <Compile Include="ClassFiles\Stuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

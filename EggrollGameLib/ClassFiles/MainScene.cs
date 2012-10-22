@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using EggrollGameLib.ClassFiles;
 
 namespace EggRollGameLib.ClassFiles
 {
@@ -12,17 +13,16 @@ namespace EggRollGameLib.ClassFiles
     {
         OnScreenMessages onScreenMessages;
         float elaps, totaltPlayTime;
-        Sprite testSprite;
+        List<Character> characters;
+        Player player; 
 
         public MainScene(ContentManager content, GraphicsDeviceManager graphicsManager)
         {
             Stuff.Initialize(content, graphicsManager);
             onScreenMessages = new OnScreenMessages();
-            testSprite = new Sprite("pixel");
-            testSprite.Scale = 20;
-            testSprite.iColor.SetColor(Color.Black);
-            testSprite.Position = new Vector2(300, 300); 
-            Camera2d.Position = Stuff.ScreenCenter; 
+            Camera2d.Position = Stuff.ScreenCenter;
+            characters = new List<Character>();
+            player = new Player(characters); 
         }
 
         public void Update(GameTime gameTime)
@@ -30,6 +30,12 @@ namespace EggRollGameLib.ClassFiles
             elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
             totaltPlayTime += elaps; 
             onScreenMessages.Update(elaps);
+
+            int c = characters.Count;
+            for (int i = 0; i < c; i++)
+            {
+                characters[i].Update(elaps); 
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphics)
@@ -38,7 +44,12 @@ namespace EggRollGameLib.ClassFiles
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera);
             onScreenMessages.Draw(spriteBatch);
 
-            testSprite.Draw(spriteBatch); 
+            int c = characters.Count;
+            for (int i = 0; i < c; i++)
+            {
+                characters[i].Draw(spriteBatch); 
+            }
+
             spriteBatch.End();
         }
     }
