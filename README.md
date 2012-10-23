@@ -1,0 +1,1 @@
+The project has changed from the original concept of hungry pigs in order to move away from similar games such as angry birds and bad piggies. The player is now an egg whom starts its journey popping out of a chicken on a farm and has to overcome many of the hazards that could be bad for a rolling egg.
