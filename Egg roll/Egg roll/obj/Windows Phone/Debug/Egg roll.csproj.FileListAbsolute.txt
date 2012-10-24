@@ -30,3 +30,19 @@ C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg ro
 bin\Windows Phone\Debug\
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.pdb
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.dll
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.pdb
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
+D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml

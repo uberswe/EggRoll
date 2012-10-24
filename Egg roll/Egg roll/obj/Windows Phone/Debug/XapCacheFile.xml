@@ -1,11 +1,11 @@
-﻿<xapCache source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="10/24/2012 4:13:25 PM">
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\Background.png" archivePath="Background.png" lastWriteTime="10/23/2012 6:48:31 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\PhoneGameThumb.png" archivePath="PhoneGameThumb.png" lastWriteTime="10/23/2012 6:48:31 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="10/24/2012 3:46:52 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="10/23/2012 6:48:32 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll" archivePath="Egg roll.dll" lastWriteTime="10/24/2012 4:13:25 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\EggrollGameLib\bin\Windows Phone\Debug\EggrollGameLib.dll" archivePath="EggrollGameLib.dll" lastWriteTime="10/24/2012 4:13:25 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb" archivePath="Content\Sprites\pixel.xnb" lastWriteTime="10/24/2012 3:45:53 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb" archivePath="Content\Font.xnb" lastWriteTime="10/24/2012 3:45:53 PM" />
-  <file source="C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb" archivePath="Content\menufont.xnb" lastWriteTime="10/24/2012 4:10:42 PM" />
+﻿<xapCache source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="10/24/2012 1:23:45 PM">
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\Background.png" archivePath="Background.png" lastWriteTime="10/24/2012 1:22:46 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\PhoneGameThumb.png" archivePath="PhoneGameThumb.png" lastWriteTime="10/24/2012 1:22:46 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="10/24/2012 1:22:46 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="10/24/2012 1:22:46 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll" archivePath="Egg roll.dll" lastWriteTime="10/24/2012 1:23:43 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\bin\Windows Phone\Debug\EggrollGameLib.dll" archivePath="EggrollGameLib.dll" lastWriteTime="10/24/2012 1:23:42 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb" archivePath="Content\Sprites\pixel.xnb" lastWriteTime="10/24/2012 1:23:43 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb" archivePath="Content\Font.xnb" lastWriteTime="10/24/2012 1:23:43 PM" />
+  <file source="D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb" archivePath="Content\menufont.xnb" lastWriteTime="10/24/2012 1:23:43 PM" />
 </xapCache>

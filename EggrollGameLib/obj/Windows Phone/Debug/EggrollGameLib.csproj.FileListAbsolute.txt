@@ -8,3 +8,9 @@ C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Eggrol
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\EggrollGameLib\bin\Windows Phone\Debug\EggrollGameLib.pdb
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\EggrollGameLib\obj\Windows Phone\Debug\EggrollGameLib.dll
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\EggrollGameLib\obj\Windows Phone\Debug\EggrollGameLib.pdb
+D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\bin\Windows Phone\Debug\EggrollGameLib.dll
+D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\bin\Windows Phone\Debug\EggrollGameLib.pdb
+D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\obj\Windows Phone\Debug\EggrollGameLib.dll
+D:\Egg_Roll\EggRoll\EggRoll\EggrollGameLib\obj\Windows Phone\Debug\EggrollGameLib.pdb
