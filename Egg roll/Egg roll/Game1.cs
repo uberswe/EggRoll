@@ -43,7 +43,7 @@ namespace Egg_roll
 
         protected override void LoadContent()
         {
-            string[] menuItems = { "Start Game", "High Scores", "Level Manager", "End Game" };
+            string[] menuItems = { "Start Game", "High Scores", "Level Manager", "Character select", "End Game" };
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mainMenu = new MainMenu(this,
             spriteBatch,
