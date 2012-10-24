@@ -64,6 +64,7 @@
     <Compile Include="ClassFiles\Character.cs" />
     <Compile Include="ClassFiles\Input.cs" />
     <Compile Include="ClassFiles\MainScene.cs" />
+    <Compile Include="ClassFiles\Menus\Button.cs" />
     <Compile Include="ClassFiles\Menus\MainMenu.cs" />
     <Compile Include="ClassFiles\OnScreenMessages.cs" />
     <Compile Include="ClassFiles\Player.cs" />

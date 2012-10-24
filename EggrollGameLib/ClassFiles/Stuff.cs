@@ -61,6 +61,22 @@ namespace EggRollGameLib
             rand = new Random();
         }
 
+        public static Color BlendColors(Color color, Color targetColor, int amount)
+        {
+            if (amount >= 100)
+                return targetColor;
+            else if (amount <= 0)
+                return color;
+            float f = 100 - amount;
+            float r = color.R, g = color.G, b = color.B, a = color.A;
+            r += (float)(targetColor.R - color.R) / f;
+            g += (float)(targetColor.G - color.G) / f;
+            b += (float)(targetColor.B - color.B) / f;
+            a += (float)(targetColor.A - color.A) / f;
+
+            return new Color((byte)r, (byte)g, (byte)b, (byte)a);
+        }
+
         public static Vector2 ScreenCenter
         {
             get { return new Vector2(Resolution.X / 2f, Resolution.Y / 2f); }
