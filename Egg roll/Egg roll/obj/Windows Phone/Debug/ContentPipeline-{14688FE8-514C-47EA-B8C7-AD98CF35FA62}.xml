@@ -11,6 +11,15 @@
       <Time>2012-10-24T15:43:45.1091913+02:00</Time>
     </Item>
     <Item>
+      <Source>Sprites\egg.png</Source>
+      <Name>Sprites\egg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb</Output>
+      <Time>2012-10-24T17:22:02.5037651+02:00</Time>
+    </Item>
+    <Item>
       <Source>Font.spritefont</Source>
       <Name>Font</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -27,15 +36,6 @@
       <Options>None</Options>
       <Output>C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb</Output>
       <Time>2012-10-24T15:43:45.1091913+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\egg.png</Source>
-      <Name>Sprites\egg</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb</Output>
-      <Time>2012-10-24T16:38:43.489829+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
