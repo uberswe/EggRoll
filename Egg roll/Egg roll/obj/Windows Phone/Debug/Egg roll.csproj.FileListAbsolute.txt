@@ -46,3 +46,7 @@ D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManif
 D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
 D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.csprojResolveAssemblyReference.cache
+C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
+C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb

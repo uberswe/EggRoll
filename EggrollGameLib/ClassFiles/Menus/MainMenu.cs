@@ -59,7 +59,7 @@ namespace EggRollGameLib.ClassFiles.Menus
             }
             position = new Vector2(
             (Game.Window.ClientBounds.Width - width) / 2,
-            20;
+            20);
         }
 
         public override void Initialize()
