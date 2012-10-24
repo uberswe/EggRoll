@@ -46,7 +46,7 @@ namespace EggRollGameLib.ClassFiles
         {
             Matrix camera = Camera2d.GetTransformation(graphics);
 
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera);
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.PointClamp, null, null, null, camera);
             onScreenMessages.Draw(spriteBatch);
 
             int c = characters.Count;

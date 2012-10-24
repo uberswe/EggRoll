@@ -24,13 +24,14 @@ namespace EggrollGameLib.ClassFiles
             : base()
         {
             this.characters = characters;
-            sprite = new Sprite("pixel");
-            sprite.Scale = 10;
-            sprite.iColor.SetColor(Color.Black);
+            sprite = new Sprite("egg");
+            sprite.Scale = 0.3f;
+            sprite.iColor.SetColor(Color.White);
             speed = 100;
+            position = new Vector2(100, 300); 
 
-            btnRight = new Button("pixel", new Vector2(90, 420));
-            btnLeft = new Button("pixel", new Vector2(250, 420));
+            btnRight = new Button("pixel", new Vector2(250, 420));
+            btnLeft = new Button("pixel", new Vector2(90, 420));
             btnJump = new Button("pixel", new Vector2(720, 420));
         }
 
@@ -53,32 +54,25 @@ namespace EggrollGameLib.ClassFiles
         {
             base.Draw(spriteBatch);
         }
+        
         public void DrawButtons(SpriteBatch spriteBatch)
         {
             btnJump.Draw(spriteBatch);
             btnRight.Draw(spriteBatch);
             btnLeft.Draw(spriteBatch);
-        
         }
+
         private void Controls()
         {
             Vector2 dir = Vector2.Zero;
-            if (Input.KeyDown(Keys.Left))
+            if (btnLeft.active)
                 dir.X -= 1f;
-            if (Input.KeyDown(Keys.Right))
+            if (btnRight.active)
                 dir.X += 1f;
-            if (Input.KeyDown(Keys.Up))
-                dir.Y -= 1f;
-            if (Input.KeyDown(Keys.Down))
-                dir.Y += 1f;
 
-            foreach (TouchLocation t in Input.tc)
-            {
-                if (t.State == TouchLocationState.Pressed|| t.State== TouchLocationState.Moved)
-                    dir = Stuff.GetDirectionFromAim(position, t.Position);
-            }
 
             direction = Stuff.Lerp(direction, dir, 0.1f);
+            sprite.Rotation += direction.X / 10f;
         }
     }
 }
