@@ -50,3 +50,4 @@ C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\
 C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
 C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
+C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb

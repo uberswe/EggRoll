@@ -25,8 +25,6 @@ namespace EggRollGameLib.ClassFiles.Menus
         float width = 0f;
         float height = 0f;
 
-        Input input;
-
         int menu = 1; //1 = main, 0 = game
 
         public int MenuSelect
@@ -40,8 +38,8 @@ namespace EggRollGameLib.ClassFiles.Menus
         {
             this.spriteBatch = spriteBatch;
             this.spriteFont = spriteFont;
-            this.menuItems = menuItems; 
-            input = new Input(); 
+            this.menuItems = menuItems;
+            Input.Initialize();
             MeasureMenu();
         }
 
@@ -70,9 +68,9 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         public override void Update(GameTime gameTime)
         {
-            input.Update();
+            Input.Update();
             base.Update(gameTime); 
-            Input();
+            Controls();
         }
 
         //draws menu items
@@ -96,14 +94,14 @@ namespace EggRollGameLib.ClassFiles.Menus
             }
         }
 
-        private void Input()
+        private void Controls()
         {
-            if (input.KeyDown(Keys.Space) || input.KeyDown(Keys.Enter))
+            if (Input.KeyDown(Keys.Space) || Input.KeyDown(Keys.Enter))
             {
                 menu = 0;
             }
 
-            foreach (TouchLocation t in input.tc)
+            foreach (TouchLocation t in Input.tc)
             {
                 if (t.State == TouchLocationState.Pressed || t.State == TouchLocationState.Moved)
                 {

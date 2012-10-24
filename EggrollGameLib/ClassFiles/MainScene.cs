@@ -31,7 +31,7 @@ namespace EggRollGameLib.ClassFiles
         {
             elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
             totaltPlayTime += elaps;
-            input.Update(); 
+            Input.Update(); 
             onScreenMessages.Update(elaps);
 
             int c = characters.Count;

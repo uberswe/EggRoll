@@ -47,16 +47,16 @@ namespace EggrollGameLib.ClassFiles
         private void Controls()
         {
             Vector2 dir = Vector2.Zero;
-            if (input.KeyDown(Keys.Left))
+            if (Input.KeyDown(Keys.Left))
                 dir.X -= 1f;
-            if (input.KeyDown(Keys.Right))
+            if (Input.KeyDown(Keys.Right))
                 dir.X += 1f;
-            if (input.KeyDown(Keys.Up))
+            if (Input.KeyDown(Keys.Up))
                 dir.Y -= 1f;
-            if (input.KeyDown(Keys.Down))
+            if (Input.KeyDown(Keys.Down))
                 dir.Y += 1f;
 
-            foreach (TouchLocation t in input.tc)
+            foreach (TouchLocation t in Input.tc)
             {
                 if (t.State == TouchLocationState.Pressed|| t.State== TouchLocationState.Moved)
                     dir = Stuff.GetDirectionFromAim(position, t.Position);

@@ -10,13 +10,13 @@ namespace EggRollGameLib
 {
     public class Input
     {
-        public KeyboardState ks, pks;
-        public MouseState ms, pms;
-        public TouchCollection tc;
-        int maxTouchCount; 
+        public static KeyboardState ks, pks;
+        public static MouseState ms, pms;
+        public static TouchCollection tc;
+        static int maxTouchCount;
 
 
-        public void Initialize()
+        public static void Initialize()
         {
             ks = new KeyboardState();
             pks = new KeyboardState();
@@ -26,7 +26,7 @@ namespace EggRollGameLib
             maxTouchCount = TouchPanel.GetCapabilities().MaximumTouchCount; 
                         
         }
-        public void Update()
+        public static void Update()
         {
             pks = ks;
             ks = Keyboard.GetState();
@@ -38,7 +38,7 @@ namespace EggRollGameLib
         /// <summary>
         /// returns a collection of touch locations, containing Position, TouchState etc. 
         /// </summary>
-        public List<TouchLocation> TouchLocations() 
+        public static List<TouchLocation> TouchLocations() 
         {
             List<TouchLocation> l = new List<TouchLocation>();
             for (int i = 0; i < maxTouchCount; i++)
@@ -51,7 +51,7 @@ namespace EggRollGameLib
         /// <summary>
         /// true when a key is pressed and released again
         /// </summary>
-        public bool KeyTap(Keys key)
+        public static bool KeyTap(Keys key)
         {
             if (ks.IsKeyUp(key) && pks.IsKeyDown(key))
             {
@@ -63,14 +63,14 @@ namespace EggRollGameLib
         /// <summary>
         /// true when a key is pressed
         /// </summary>
-        public bool KeyDown(Keys key)
+        public static bool KeyDown(Keys key)
         {
             if (ks.IsKeyDown(key))
                 return true;
             return false;
         }
 
-        public bool AnyKey()
+        public static bool AnyKey()
         {
             if (ks != pks)
                 return true;
@@ -79,25 +79,25 @@ namespace EggRollGameLib
             return false;
         }
 
-        public bool MouseRightPress()
+        public static bool MouseRightPress()
         {
             if (ms.RightButton == ButtonState.Pressed)
                 return true;
             return false;
         }
-        public bool MouseRightClick()
+        public static bool MouseRightClick()
         {
             if (pms.RightButton == ButtonState.Pressed && ms.RightButton == ButtonState.Released)
                 return true;
             return false;
         }
-        public bool MouseLeftPress()
+        public static bool MouseLeftPress()
         {
             if (ms.LeftButton == ButtonState.Pressed)
                 return true;
             return false;
         }
-        public bool MouseLeftClick()
+        public static bool MouseLeftClick()
         {
             if (pms.LeftButton == ButtonState.Pressed && ms.LeftButton == ButtonState.Released)
                 return true;
@@ -107,7 +107,7 @@ namespace EggRollGameLib
         /// <summary>
         /// returns a normalized direction in which the mouse is moving
         /// </summary>
-        public Vector2 MouseDirection()
+        public static Vector2 MouseDirection()
         {
             Vector2 mv = new Vector2(ms.X, ms.Y);
             Vector2 pmv = new Vector2(pms.X, pms.Y);
@@ -116,7 +116,7 @@ namespace EggRollGameLib
             else
                 return Vector2.Normalize(mv - pmv);
         }
-        public Vector2 MousePosition
+        public static Vector2 MousePosition
         {
             get { return new Vector2(ms.X, ms.Y); }
         }
