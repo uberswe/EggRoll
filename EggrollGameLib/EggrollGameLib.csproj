@@ -66,6 +66,7 @@
     <Compile Include="ClassFiles\MainScene.cs" />
     <Compile Include="ClassFiles\Menus\Button.cs" />
     <Compile Include="ClassFiles\Menus\MainMenu.cs" />
+    <Compile Include="ClassFiles\Menus\ScreenManager.cs" />
     <Compile Include="ClassFiles\OnScreenMessages.cs" />
     <Compile Include="ClassFiles\Player.cs" />
     <Compile Include="ClassFiles\Sprite.cs" />
