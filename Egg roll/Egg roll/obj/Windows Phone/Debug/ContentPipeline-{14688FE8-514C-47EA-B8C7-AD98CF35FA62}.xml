@@ -28,6 +28,15 @@
       <Output>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb</Output>
       <Time>2012-10-24T13:31:25.204401+02:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\egg.png</Source>
+      <Name>Sprites\egg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb</Output>
+      <Time>2012-10-24T16:38:43.489829+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{14688FE8-514C-47EA-B8C7-AD98CF35FA62}</ContentProjectGUID>
