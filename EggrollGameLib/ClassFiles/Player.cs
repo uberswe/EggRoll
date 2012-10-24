@@ -8,24 +8,30 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 
 using Microsoft.Xna.Framework.Audio;
+using EggrollGameLib.ClassFiles.Menus;
+using Microsoft.Xna.Framework.Graphics;
 
 
 namespace EggrollGameLib.ClassFiles
 {
     class Player : Character
     {
-        Input input;
         SoundEffect Jump;
         SoundEffect DamageTaken;
-        public Player(Input input, List<Character> characters)
+        Button btnRight, btnLeft, btnJump;
+
+        public Player(List<Character> characters)
             : base()
         {
-            this.input = input;
             this.characters = characters;
             sprite = new Sprite("pixel");
             sprite.Scale = 10;
             sprite.iColor.SetColor(Color.Black);
             speed = 100;
+
+            btnRight = new Button("pixel", new Vector2(90, 420));
+            btnLeft = new Button("pixel", new Vector2(250, 420));
+            btnJump = new Button("pixel", new Vector2(720, 420));
         }
 
         public override void LoadContent()
@@ -35,15 +41,25 @@ namespace EggrollGameLib.ClassFiles
 
         public override void Update(float elaps)
         {
+            btnRight.Update(elaps);
+            btnLeft.Update(elaps);
+            btnJump.Update(elaps); 
+
             base.Update(elaps);
             Controls();
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
         }
-
+        public void DrawButtons(SpriteBatch spriteBatch)
+        {
+            btnJump.Draw(spriteBatch);
+            btnRight.Draw(spriteBatch);
+            btnLeft.Draw(spriteBatch);
+        
+        }
         private void Controls()
         {
             Vector2 dir = Vector2.Zero;

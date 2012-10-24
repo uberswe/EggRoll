@@ -14,39 +14,40 @@ namespace EggrollGameLib.ClassFiles.Menus
         public Vector2 position;
         Sprite sprite;
         float scale;
-        public bool active, nostate;
+        public bool active, isSwitchButton;
 
         Rectangle hitbox
         {
             get
             {
-                return new Rectangle((int)position.X, (int)position.Y, sprite.Source.Width, sprite.Source.Height);
+                return new Rectangle((int)position.X - (sprite.Source.Width / 2), (int)position.Y - (sprite.Source.Height / 2), sprite.Source.Width, sprite.Source.Height);
             }
         }
 
         public Button(string assetName, Vector2 position)
         {
             sprite = new Sprite(assetName);
+            sprite.Source = new Rectangle(0, 0, 150, 100);
+            this.position = position;
             scale = 1f;
+            isSwitchButton = false; 
         }
-        public bool Update(float elaps, Input input)
+        public bool Update(float elaps)
         {
+            if (isSwitchButton == false)
+                active = false;
             sprite.Scale = Stuff.Lerp(sprite.Scale, scale, 0.1f);
-            sprite.Position = position;
-            if (nostate)
-                sprite.iColor.SetColor(Color.White);
+
+            if (active)
+                sprite.iColor.SetColor(Stuff.BlendColors(sprite.iColor, Color.Green, 90));
             else
-            {
-                if (active)
-                    sprite.iColor.SetColor(Stuff.BlendColors(sprite.iColor, Color.Green, 90));
-                else
-                    sprite.iColor.SetColor(Stuff.BlendColors(sprite.iColor, Color.Red, 90));
-            }
+                sprite.iColor.SetColor(Stuff.BlendColors(sprite.iColor, Color.Red, 90));
 
             bool buttonHit = false;
             foreach (TouchLocation tc in Input.tc)
-                if (hitbox.Intersects(new Rectangle((int)tc.Position.X, (int)tc.Position.Y, 5, 5)))
-                    buttonHit = true;
+                if (tc.State == TouchLocationState.Moved || tc.State == TouchLocationState.Pressed)
+                    if (hitbox.Intersects(new Rectangle((int)tc.Position.X, (int)tc.Position.Y, 5, 5)))
+                        buttonHit = true;
 
             if (buttonHit)
             {
@@ -57,9 +58,10 @@ namespace EggrollGameLib.ClassFiles.Menus
 
             return false;
         }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            sprite.DrawAt(spriteBatch, position);
         }
     }
 }
