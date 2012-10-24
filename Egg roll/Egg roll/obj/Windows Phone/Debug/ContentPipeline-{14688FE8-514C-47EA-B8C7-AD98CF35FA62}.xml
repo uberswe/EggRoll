@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb</Output>
-      <Time>2012-10-22T15:10:09.7499986+02:00</Time>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb</Output>
+      <Time>2012-10-23T18:48:32.1108097+02:00</Time>
     </Item>
     <Item>
       <Source>Font.spritefont</Source>
@@ -16,8 +16,17 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb</Output>
-      <Time>2012-10-22T15:20:26.9012976+02:00</Time>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb</Output>
+      <Time>2012-10-23T18:48:32.064807+02:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb</Output>
+      <Time>2012-10-24T16:10:42.3159657+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -26,10 +35,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg rollContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg rollContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -58,7 +67,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-10-01T09:57:07.8094444+02:00</Value>
+        <Value>2012-10-18T22:24:50.6464159+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

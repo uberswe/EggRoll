@@ -65,7 +65,6 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Properties\AppManifest.xml">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

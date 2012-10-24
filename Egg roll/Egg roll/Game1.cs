@@ -10,14 +10,18 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
 using EggRollGameLib;
-using EggRollGameLib.ClassFiles; 
+using EggRollGameLib.ClassFiles;
+using EggRollGameLib.ClassFiles.Menus;
 namespace Egg_roll
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        MainScene mainScene; 
+        MainScene mainScene;
+        MainMenu mainMenu;
+
+        int menu = 1; //1 = main menu, 0 = game?
         
         public Game1()
         {
@@ -39,8 +43,16 @@ namespace Egg_roll
 
         protected override void LoadContent()
         {
+            string[] menuItems = { "Start Game", "High Scores", "Level Manager", "End Game" };
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            mainScene = new MainScene(Content, graphics); 
+            mainMenu = new MainMenu(this,
+            spriteBatch,
+            Content.Load<SpriteFont>("menufont"),
+            menuItems);
+            Components.Add(mainMenu);
+
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            mainScene = new MainScene(Content, graphics);
         }
 
         protected override void UnloadContent()
@@ -50,8 +62,15 @@ namespace Egg_roll
 
         protected override void Update(GameTime gameTime)
         {
+            if (menu == 1)
+            {
+                menu = mainMenu.MenuSelect;
+            }
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            {
                 this.Exit();
+            }
 
             mainScene.Update(gameTime); 
 
@@ -61,8 +80,14 @@ namespace Egg_roll
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            mainScene.Draw(spriteBatch, GraphicsDevice); 
+            if (menu == 1)
+            {
+                mainMenu.Draw(gameTime);
+            }
+            else
+            {
+                mainScene.Draw(spriteBatch, GraphicsDevice);
+            }
 
             base.Draw(gameTime);
         }
