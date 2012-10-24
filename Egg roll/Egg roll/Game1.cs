@@ -18,6 +18,8 @@ namespace Egg_roll
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ScreenManager screenManager;
+
         MainScene mainScene;
         MainMenu mainMenu;
 
@@ -53,6 +55,7 @@ namespace Egg_roll
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mainScene = new MainScene(Content, graphics);
+            screenManager = new ScreenManager(this, mainMenu, mainScene);
         }
 
         protected override void UnloadContent()
@@ -62,32 +65,20 @@ namespace Egg_roll
 
         protected override void Update(GameTime gameTime)
         {
-            if (menu == 1)
-            {
-                menu = mainMenu.MenuSelect;
-            }
-
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
             {
                 this.Exit();
             }
 
-            mainScene.Update(gameTime); 
+            screenManager.Update(gameTime);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            if (menu == 1)
-            {
-                mainMenu.Draw(gameTime);
-            }
-            else
-            {
-                mainScene.Draw(spriteBatch, GraphicsDevice);
-            }
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
+            screenManager.Draw(gameTime, GraphicsDevice, spriteBatch);
 
             base.Draw(gameTime);
         }
