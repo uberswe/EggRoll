@@ -7,12 +7,16 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 
+using Microsoft.Xna.Framework.Audio;
+
+
 namespace EggrollGameLib.ClassFiles
 {
     class Player : Character
     {
         Input input;
-
+        SoundEffect Jump;
+        SoundEffect DamageTaken;
         public Player(Input input, List<Character> characters)
             : base()
         {
