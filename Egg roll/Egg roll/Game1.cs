@@ -75,7 +75,6 @@ namespace Egg_roll
 
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
             screenManager.Draw(gameTime, GraphicsDevice, spriteBatch);
 
             base.Draw(gameTime);

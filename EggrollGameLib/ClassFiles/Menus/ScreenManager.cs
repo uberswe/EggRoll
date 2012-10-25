@@ -55,12 +55,10 @@ namespace EggRollGameLib.ClassFiles.Menus
         {
             if (menu == 1)
             {
-                graphics.Clear(Color.Black);
                 mainMenu.Draw(gameTime);
             }
             else
             {
-                graphics.Clear(Color.CornflowerBlue);
                 mainScene.Draw(spriteBatch, graphics);
             }
         }
