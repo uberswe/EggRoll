@@ -24,7 +24,6 @@ namespace EggRollGameLib.ClassFiles.Menus
         Vector2 position;
         float width = 0f;
         float height = 0f;
-
         int menu = 1; //1 = main, 0 = game
 
         public int MenuSelect
@@ -69,7 +68,7 @@ namespace EggRollGameLib.ClassFiles.Menus
         public override void Update(GameTime gameTime)
         {
             Input.Update();
-            base.Update(gameTime); 
+            base.Update(gameTime);
             Controls();
         }
 
@@ -80,17 +79,18 @@ namespace EggRollGameLib.ClassFiles.Menus
             {
                 base.Draw(gameTime);
                 Vector2 location = position;
+                spriteBatch.Begin();
                 for (int i = 0; i < menuItems.Length; i++)
                 {
-                    spriteBatch.Begin();
                     spriteBatch.DrawString(
                     spriteFont,
                     menuItems[i],
                     location,
                     fontColor);
                     location.Y += spriteFont.LineSpacing + 5;
-                    spriteBatch.End();
                 }
+
+                spriteBatch.End();
             }
         }
 
@@ -107,7 +107,7 @@ namespace EggRollGameLib.ClassFiles.Menus
                 {
                     menu = 0;
                 }
-                    
+
             }
         }
     }

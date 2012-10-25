@@ -15,14 +15,14 @@ namespace EggRollGameLib
         public static ContentManager Content;
         public static Point Resolution;
         public static GraphicsDeviceManager Graphics;
-
+        public static Vector2 Gravity = new Vector2(0, 1); 
 
         public static void Initialize(ContentManager content, GraphicsDeviceManager graphics)
         {
             Content = content;
             Graphics = graphics;
             //SetResolution(1280, 800);
-            SetResolution(1366, 768);
+            SetResolution(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height);
             //SetResolution(1920, 1080);
             rectangleSprite = Content.Load<Texture2D>("Sprites\\pixel");
         }

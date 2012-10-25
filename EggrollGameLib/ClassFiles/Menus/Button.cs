@@ -24,10 +24,10 @@ namespace EggrollGameLib.ClassFiles.Menus
             }
         }
 
-        public Button(string assetName, Vector2 position)
+        public Button(string assetName, Vector2 position, Rectangle size)
         {
             sprite = new Sprite(assetName);
-            sprite.Source = new Rectangle(0, 0, 150, 100);
+            sprite.Source = size;
             this.position = position;
             scale = 1f;
             isSwitchButton = false; 

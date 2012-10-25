@@ -16,6 +16,7 @@ namespace EggRollGameLib.ClassFiles
         Input input;
         List<Character> characters;
         Player player;
+        List<Sprite> debugTiles;
 
         public MainScene(ContentManager content, GraphicsDeviceManager graphicsManager)
         {
@@ -25,6 +26,15 @@ namespace EggRollGameLib.ClassFiles
             input = new Input();
             characters = new List<Character>();
             player = new Player(characters);
+
+            debugTiles = new List<Sprite>();
+            for (int i = -10; i < 30; i++)
+            {
+                Sprite s = new Sprite("SpriteSheet");
+                s.Source = new Rectangle(1 * 150, 9 * 150, 150, 150);
+                s.Position = new Vector2(i * 150, 400);
+                debugTiles.Add(s);
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -54,6 +64,13 @@ namespace EggRollGameLib.ClassFiles
             {
                 characters[i].Draw(spriteBatch);
             }
+
+            c = debugTiles.Count;
+            for (int i = 0; i < c; i++)
+            {
+                debugTiles[i].Draw(spriteBatch);
+            }
+
             player.Draw(spriteBatch);
 
             spriteBatch.End();
