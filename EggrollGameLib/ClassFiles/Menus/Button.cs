@@ -20,6 +20,7 @@ namespace EggrollGameLib.ClassFiles.Menus
         {
             get
             {
+                //return new Rectangle((int)position.X , (int)position.Y , sprite.Source.Width, sprite.Source.Height);
                 return new Rectangle((int)position.X - (sprite.Source.Width / 2), (int)position.Y - (sprite.Source.Height / 2), sprite.Source.Width, sprite.Source.Height);
             }
         }

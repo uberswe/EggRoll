@@ -128,7 +128,8 @@ namespace EggRollGameLib.ClassFiles.Menus
                 {
                     foreach (Button b in buttons)
                     {
-                        if (b.hitbox.Intersects(new Rectangle((int)t.Position.X, (int)t.Position.Y, 5, 5)))
+                        if(b.active)
+                        //if (b.hitbox.Intersects(new Rectangle((int)t.Position.X, (int)t.Position.Y, 5, 5)))
                         {
                             menu = 0;
                         }

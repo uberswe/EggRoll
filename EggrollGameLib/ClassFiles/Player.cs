@@ -30,9 +30,9 @@ namespace EggrollGameLib.ClassFiles
             speed = 300;
             position = new Vector2(100, 300);
 
-            btnRight = new Button("pixel", new Vector2(700, 420), new Rectangle(0, 0, 150, 100));
+            btnRight = new Button("pixel", new Vector2(250, 420), new Rectangle(0, 0, 150, 100));
             btnLeft = new Button("pixel", new Vector2(90, 420), new Rectangle(0, 0, 150, 100));
-            btnJump = new Button("pixel", new Vector2(420, 420), new Rectangle(0, 0, 150, 100));
+            btnJump = new Button("pixel", new Vector2(700, 420), new Rectangle(0, 0, 150, 100));
             weight = 9f;
         }
 
