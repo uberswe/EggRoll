@@ -22,8 +22,6 @@ namespace Egg_roll
 
         MainScene mainScene;
         MainMenu mainMenu;
-
-        int menu = 1; //1 = main menu, 0 = game?
         
         public Game1()
         {

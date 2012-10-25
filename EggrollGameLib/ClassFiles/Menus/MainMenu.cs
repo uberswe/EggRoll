@@ -15,6 +15,8 @@ namespace EggRollGameLib.ClassFiles.Menus
 {
     public class MainMenu : Microsoft.Xna.Framework.DrawableGameComponent
     {
+        List<Rectangle> rectangles = new List<Rectangle>();
+
         string[] menuItems;
 
         Color fontColor = Color.White;
@@ -69,7 +71,7 @@ namespace EggRollGameLib.ClassFiles.Menus
         public override void Update(GameTime gameTime)
         {
             Input.Update();
-            base.Update(gameTime); 
+
             Controls();
         }
 
@@ -78,20 +80,27 @@ namespace EggRollGameLib.ClassFiles.Menus
         {
             if (menu == 1)
             {
-                base.Draw(gameTime);
+                int location1;
+                int location2;
+                //base.Draw(gameTime);
                 Vector2 location = position;
+                spriteBatch.Begin();
                 for (int i = 0; i < menuItems.Length; i++)
                 {
-                    spriteBatch.Begin();
                     spriteBatch.DrawString(
                     spriteFont,
                     menuItems[i],
                     location,
                     fontColor);
                     location.Y += spriteFont.LineSpacing + 5;
-                    spriteBatch.End();
+                    location1 = Convert.ToInt32(location.X);
+                    location2 = Convert.ToInt32(location.Y);
+                    Rectangle menuItem = new Rectangle(location1, location2, 400, 100);
+                    rectangles.Add(menuItem);
                 }
+                spriteBatch.End();
             }
+
         }
 
         private void Controls()
@@ -105,10 +114,14 @@ namespace EggRollGameLib.ClassFiles.Menus
             {
                 if (t.State == TouchLocationState.Pressed || t.State == TouchLocationState.Moved)
                 {
-                    menu = 0;
+                    foreach (Rectangle r in rectangles) {
+                        if (r.Intersects(new Rectangle((int)t.Position.X, (int)t.Position.Y, 5, 5))) {
+                            menu = 0;
+                        }
+                    }
+                    }
                 }
-                    
-            }
+                
         }
     }
 }
