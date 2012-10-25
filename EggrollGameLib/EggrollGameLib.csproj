@@ -69,6 +69,7 @@
     <Compile Include="ClassFiles\Menus\ScreenManager.cs" />
     <Compile Include="ClassFiles\OnScreenMessages.cs" />
     <Compile Include="ClassFiles\Player.cs" />
+    <Compile Include="ClassFiles\Sound.cs" />
     <Compile Include="ClassFiles\Sprite.cs" />
     <Compile Include="ClassFiles\Stuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
