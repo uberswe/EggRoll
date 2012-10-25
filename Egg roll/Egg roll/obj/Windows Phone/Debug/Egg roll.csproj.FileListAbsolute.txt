@@ -68,3 +68,10 @@ C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows 
 C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\
