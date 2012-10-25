@@ -1,5 +1,5 @@
 Content\Sprites\pixel.xnb
 Content\Sprites\egg.xnb
+Content\Sprites\SpriteSheet.xnb
 Content\Font.xnb
 Content\menufont.xnb
-Content\Sprites\SpriteSheet.xnb

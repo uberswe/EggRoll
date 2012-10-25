@@ -9,17 +9,18 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Input.Touch;
-
+using EggrollGameLib.ClassFiles.Menus;
+using EggrollGameLib.ClassFiles;
 
 namespace EggRollGameLib.ClassFiles.Menus
 {
     public class MainMenu : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        List<Rectangle> rectangles = new List<Rectangle>();
+        List<Button> buttons = new List<Button>();
 
         string[] menuItems;
 
-        Color fontColor = Color.White;
+        Color fontColor = Color.Black;
 
         SpriteBatch spriteBatch;
         SpriteFont spriteFont;
@@ -70,7 +71,10 @@ namespace EggRollGameLib.ClassFiles.Menus
         public override void Update(GameTime gameTime)
         {
             Input.Update();
-
+            foreach (Button b in buttons)
+            {
+                b.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
             Controls();
         }
 
@@ -86,16 +90,25 @@ namespace EggRollGameLib.ClassFiles.Menus
                 spriteBatch.Begin();
                 for (int i = 0; i < menuItems.Length; i++)
                 {
+                    
+
+                    location1 = Convert.ToInt32(location.X);
+                    location2 = Convert.ToInt32(location.Y);
+                    Vector2 stringSize = spriteFont.MeasureString(menuItems[i]);
+                    int width = Convert.ToInt32(stringSize.X);
+                    int height = Convert.ToInt32(stringSize.Y);
+                    Rectangle menuItem = new Rectangle(location1, location2, width, height);
+                    Button button = new Button("pixel", location, menuItem);
+                    button.sprite.Origin = Vector2.Zero;
+                    buttons.Add(button);
+                    button.Draw(spriteBatch);
+
                     spriteBatch.DrawString(
                     spriteFont,
                     menuItems[i],
                     location,
                     fontColor);
                     location.Y += spriteFont.LineSpacing + 5;
-                    location1 = Convert.ToInt32(location.X);
-                    location2 = Convert.ToInt32(location.Y);
-                    Rectangle menuItem = new Rectangle(location1, location2, 400, 100);
-                    rectangles.Add(menuItem);
                 }
                 spriteBatch.End();
             }
@@ -111,16 +124,18 @@ namespace EggRollGameLib.ClassFiles.Menus
 
             foreach (TouchLocation t in Input.tc)
             {
-                if (t.State == TouchLocationState.Pressed || t.State == TouchLocationState.Moved)
+                if (t.State == TouchLocationState.Pressed)
                 {
-                    foreach (Rectangle r in rectangles) {
-                        if (r.Intersects(new Rectangle((int)t.Position.X, (int)t.Position.Y, 5, 5))) {
+                    foreach (Button b in buttons)
+                    {
+                        if (b.hitbox.Intersects(new Rectangle((int)t.Position.X, (int)t.Position.Y, 5, 5)))
+                        {
                             menu = 0;
                         }
                     }
-                    }
                 }
-                
+            }
+
         }
     }
 }

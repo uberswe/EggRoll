@@ -30,9 +30,9 @@ namespace EggrollGameLib.ClassFiles
             speed = 300;
             position = new Vector2(100, 300);
 
-            btnRight = new Button("pixel", new Vector2(250, 420), new Rectangle(0, 0, 150, 100));
+            btnRight = new Button("pixel", new Vector2(700, 420), new Rectangle(0, 0, 150, 100));
             btnLeft = new Button("pixel", new Vector2(90, 420), new Rectangle(0, 0, 150, 100));
-            btnJump = new Button("pixel", new Vector2(720, 420), new Rectangle(0, 0, 150, 100));
+            btnJump = new Button("pixel", new Vector2(420, 420), new Rectangle(0, 0, 150, 100));
             weight = 9f;
         }
 
@@ -81,8 +81,12 @@ namespace EggrollGameLib.ClassFiles
             if (btnRight.active)
                 dir.X += 1f;
 
-            direction = Stuff.Lerp(direction, dir, 0.1f);
+            if (dir.X == 0 && onGround && sprite.Rotation != 0)
+                dir.X = Stuff.AngleToVector(sprite.Rotation).X;
+
+            direction.X = Stuff.Lerp(direction.X, dir.X, 0.1f);
             sprite.Rotation += direction.X * (speed * 0.00075f);
+            sprite.Rotation = sprite.Rotation % (float)(Math.PI * 2f);
 
             if (btnJump.active)
             {

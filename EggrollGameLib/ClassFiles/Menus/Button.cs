@@ -12,11 +12,11 @@ namespace EggrollGameLib.ClassFiles.Menus
     class Button
     {
         public Vector2 position;
-        Sprite sprite;
+        public Sprite sprite;
         float scale;
         public bool active, isSwitchButton;
 
-        Rectangle hitbox
+        public Rectangle hitbox
         {
             get
             {
@@ -32,6 +32,7 @@ namespace EggrollGameLib.ClassFiles.Menus
             scale = 1f;
             isSwitchButton = false; 
         }
+
         public bool Update(float elaps)
         {
             if (isSwitchButton == false)
