@@ -27,12 +27,13 @@ namespace EggrollGameLib.ClassFiles
             sprite = new Sprite("egg");
             sprite.Scale = 0.3f;
             sprite.iColor.SetColor(Color.White);
-            speed = 100;
-            position = new Vector2(100, 300); 
+            speed = 300;
+            position = new Vector2(100, 300);
 
-            btnRight = new Button("pixel", new Vector2(250, 420));
-            btnLeft = new Button("pixel", new Vector2(90, 420));
-            btnJump = new Button("pixel", new Vector2(720, 420));
+            btnRight = new Button("pixel", new Vector2(250, 420), new Rectangle(0, 0, 150, 100));
+            btnLeft = new Button("pixel", new Vector2(90, 420), new Rectangle(0, 0, 150, 100));
+            btnJump = new Button("pixel", new Vector2(720, 420), new Rectangle(0, 0, 150, 100));
+            weight = 9f;
         }
 
         public override void LoadContent()
@@ -44,17 +45,27 @@ namespace EggrollGameLib.ClassFiles
         {
             btnRight.Update(elaps);
             btnLeft.Update(elaps);
-            btnJump.Update(elaps); 
+            btnJump.Update(elaps);
+
+            if (position.Y >= 300)
+            {
+                onGround = true;
+                position.Y = 300;
+            }
+            else
+                onGround = false;
+
+            Controls();
 
             base.Update(elaps);
-            Controls();
+            Camera2d.Position = position + (Stuff.AngleToVector(sprite.Rotation + (float)Math.PI) * 20);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
         }
-        
+
         public void DrawButtons(SpriteBatch spriteBatch)
         {
             btnJump.Draw(spriteBatch);
@@ -70,9 +81,19 @@ namespace EggrollGameLib.ClassFiles
             if (btnRight.active)
                 dir.X += 1f;
 
-
             direction = Stuff.Lerp(direction, dir, 0.1f);
-            sprite.Rotation += direction.X / 10f;
+            sprite.Rotation += direction.X * (speed * 0.00075f);
+
+            if (btnJump.active)
+            {
+                if (onGround)
+                {
+                    onGround = false;
+                    gravForce = new Vector2(0, -3f);
+                }
+                //gravForce = Vector2.Zero; 
+                //position = new Vector2(100, 100); 
+            }
         }
     }
 }

@@ -26,7 +26,6 @@ namespace EggRollGameLib.ClassFiles.Menus
         Vector2 position;
         float width = 0f;
         float height = 0f;
-
         int menu = 1; //1 = main, 0 = game
 
         public int MenuSelect

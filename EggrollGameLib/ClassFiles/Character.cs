@@ -10,10 +10,10 @@ namespace EggRollGameLib
     public class Character
     {
         protected Sprite sprite;
-        protected Vector2 position, direction;
-        protected float life, speed;
-        protected bool remove, special;
-        protected List<Character> characters; 
+        protected Vector2 position, direction, gravForce;
+        protected float life, speed, weight;
+        protected bool remove, special, onGround;
+        protected List<Character> characters;
 
         public Character()
         {
@@ -22,16 +22,30 @@ namespace EggRollGameLib
         public virtual void LoadContent()
         {
             life = 1;
+            gravForce = Vector2.Zero;
         }
 
         public virtual void Update(float elaps)
         {
-            position += direction * speed * elaps; 
+            position += direction * speed * elaps;
+            ApplyGravity(elaps); 
+            position += gravForce * weight;
+        }
+
+        protected void ApplyGravity(float elaps)
+        {
+            if (onGround == false)
+            {
+                gravForce += Stuff.Gravity * weight * elaps;
+                onGround = true;
+            }
+            else
+                gravForce = Vector2.Zero; 
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            sprite.DrawAt(spriteBatch, position); 
+            sprite.DrawAt(spriteBatch, position);
         }
 
         /// <summary>
@@ -78,7 +92,7 @@ namespace EggRollGameLib
 
         public virtual void SpecialEvent()
         {
-            special = true; 
+            special = true;
         }
     }
 }
