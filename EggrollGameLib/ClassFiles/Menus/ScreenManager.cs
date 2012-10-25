@@ -48,7 +48,7 @@ namespace EggRollGameLib.ClassFiles.Menus
                 mainScene.Update(gameTime);
             }
 
-            base.Update(gameTime);
+            //base.Update(gameTime);
         }
 
         public void Draw(GameTime gameTime, GraphicsDevice graphics, SpriteBatch spriteBatch)
