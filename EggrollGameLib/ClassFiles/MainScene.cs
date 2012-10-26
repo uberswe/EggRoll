@@ -18,6 +18,11 @@ namespace EggRollGameLib.ClassFiles
         Player player;
         List<Sprite> debugTiles;
 
+        SpriteFont Font1;
+        Vector2 FontPos;
+
+        public static float yaccel;
+
         public MainScene(ContentManager content, GraphicsDeviceManager graphicsManager)
         {
             Stuff.Initialize(content, graphicsManager);
@@ -49,7 +54,13 @@ namespace EggRollGameLib.ClassFiles
             {
                 characters[i].Update(elaps);
             }
-            player.Update(elaps);
+
+            player.Update(elaps, yaccel);
+        }
+
+        public static void AccelData(Vector3 AccelerationReading)
+        {
+            yaccel = AccelerationReading.Y;
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphics)
@@ -76,7 +87,10 @@ namespace EggRollGameLib.ClassFiles
             spriteBatch.End();
 
             spriteBatch.Begin();
+
             player.DrawButtons(spriteBatch);
+
+            
             spriteBatch.End();
 
         }

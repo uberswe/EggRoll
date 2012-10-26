@@ -32,7 +32,7 @@ namespace EggRollGameLib
             ks = Keyboard.GetState();
             pms = ms;
             ms = Mouse.GetState();
-            tc = TouchPanel.GetState(); 
+            tc = TouchPanel.GetState();
         }
 
         /// <summary>
