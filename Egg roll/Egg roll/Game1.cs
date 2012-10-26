@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework.Media;
 using EggRollGameLib;
 using EggRollGameLib.ClassFiles;
 using EggRollGameLib.ClassFiles.Menus;
+using Microsoft.Devices.Sensors;
+
 namespace Egg_roll
 {
     public class Game1 : Microsoft.Xna.Framework.Game
@@ -22,7 +24,11 @@ namespace Egg_roll
 
         MainScene mainScene;
         MainMenu mainMenu;
-        
+
+        Vector3 accelerometer;
+
+        Accelerometer accel;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -38,12 +44,14 @@ namespace Egg_roll
 
         protected override void Initialize()
         {
+            accel = new Accelerometer(); 
+            accel.Start();
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            string[] menuItems = { "Start Game", "High Scores", "Level Manager", "Character select", "End Game" };
+            string[] menuItems = { "Start Game", "High Scores", "End Game" };
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mainMenu = new MainMenu(this,
             spriteBatch,
@@ -63,6 +71,13 @@ namespace Egg_roll
 
         protected override void Update(GameTime gameTime)
         {
+            if (Accelerometer.IsSupported)
+            {
+                AccelerometerReading ar = accel.CurrentValue;
+                accelerometer = ar.Acceleration;
+                MainScene.AccelData(accelerometer);
+            }
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
             {
                 this.Exit();
