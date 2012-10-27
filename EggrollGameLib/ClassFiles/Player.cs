@@ -79,13 +79,13 @@ namespace EggrollGameLib.ClassFiles
         {
             Vector2 dir = Vector2.Zero;
             if (btnLeft.active)
-                dir.X -= 1f;
+                dir.X -= 2f;
             if (btnRight.active)
-                dir.X += 1f;
+                dir.X += 2f;
 
-            if (ay > 0 || ay < 0)
+            if (ay > 0.15 || ay < -0.15)
             {
-                dir.X -= ay;
+                dir.X -= ay * 3;
             }
 
             if (dir.X == 0 && onGround && sprite.Rotation != 0)
