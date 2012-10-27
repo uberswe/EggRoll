@@ -3,3 +3,4 @@ Content\Sprites\egg.xnb
 Content\Sprites\SpriteSheet.xnb
 Content\Font.xnb
 Content\menufont.xnb
+Content\loadingfont.xnb

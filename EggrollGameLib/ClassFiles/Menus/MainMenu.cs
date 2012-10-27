@@ -27,7 +27,7 @@ namespace EggRollGameLib.ClassFiles.Menus
         Vector2 position;
         float width = 0f;
         float height = 0f;
-        int menu = 1; //1 = main, 0 = game
+        int menu = -1; //-1 = main, 0 = game
 
         public int MenuSelect
         {
@@ -63,54 +63,52 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         public override void Initialize()
         {
-
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
-            //Input.Update();
+            Input.Update();
             foreach (Button b in buttons)
             {
                 b.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
             Controls();
+            base.Update(gameTime);
         }
 
         //draws menu items
-        public override void Draw(GameTime gameTime)
+        public void Draw(GraphicsDevice graphics, SpriteBatch spriteBatch)
         {
-            if (menu == 0)
+            graphics.Clear(Color.Black);
+            List<Button> buttonstemp = new List<Button>();
+            spriteBatch.Begin();
+            Vector2 location = position;
+            int location1;
+            int location2;
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                int location1;
-                int location2;
-                //base.Draw(gameTime);
-                Vector2 location = position;
-                spriteBatch.Begin();
-                for (int i = 0; i < menuItems.Length; i++)
-                {
-                    
+                location1 = Convert.ToInt32(location.X);
+                location2 = Convert.ToInt32(location.Y);
+                Vector2 stringSize = spriteFont.MeasureString(menuItems[i]);
+                int width = Convert.ToInt32(stringSize.X);
+                int height = Convert.ToInt32(stringSize.Y);
+                Rectangle menuItem = new Rectangle(location1, location2, width, height);
+                Button button = new Button("pixel", location, menuItem);
+                button.sprite.Origin = Vector2.Zero;
+                buttonstemp.Add(button);
 
-                    location1 = Convert.ToInt32(location.X);
-                    location2 = Convert.ToInt32(location.Y);
-                    Vector2 stringSize = spriteFont.MeasureString(menuItems[i]);
-                    int width = Convert.ToInt32(stringSize.X);
-                    int height = Convert.ToInt32(stringSize.Y);
-                    Rectangle menuItem = new Rectangle(location1, location2, width, height);
-                    Button button = new Button("pixel", location, menuItem);
-                    button.sprite.Origin = Vector2.Zero;
-                    buttons.Add(button);
-                    button.Draw(spriteBatch);
+                button.Draw(spriteBatch);
 
-                    spriteBatch.DrawString(
-                    spriteFont,
-                    menuItems[i],
-                    location,
-                    fontColor);
-                    location.Y += spriteFont.LineSpacing + 5;
-                }
-                spriteBatch.End();
+                spriteBatch.DrawString(
+                spriteFont,
+                menuItems[i],
+                location,
+                fontColor);
+                location.Y += spriteFont.LineSpacing + 5;
             }
+            spriteBatch.End();
+            buttons = buttonstemp;
 
         }
 
@@ -120,20 +118,15 @@ namespace EggRollGameLib.ClassFiles.Menus
             {
                 menu = 0;
             }
-
-            foreach (TouchLocation t in Input.tc)
+            int i = 0;
+            foreach (Button b in buttons)
             {
-                if (t.State == TouchLocationState.Pressed)
+                if (b.active)
                 {
-                    foreach (Button b in buttons)
-                    {
-                        if(b.active)
-                        //if (b.hitbox.Intersects(new Rectangle((int)t.Position.X, (int)t.Position.Y, 5, 5)))
-                        {
-                            menu = 0;
-                        }
-                    }
+                    menu = i;
+                    break;
                 }
+                i++;
             }
 
         }

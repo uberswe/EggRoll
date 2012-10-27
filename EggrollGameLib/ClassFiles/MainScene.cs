@@ -65,6 +65,7 @@ namespace EggRollGameLib.ClassFiles
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphics)
         {
+            graphics.Clear(Color.CornflowerBlue);
             Matrix camera = Camera2d.GetTransformation(graphics);
 
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.PointClamp, null, null, null, camera);

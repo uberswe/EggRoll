@@ -20,14 +20,18 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         MainScene mainScene;
         MainMenu mainMenu;
+        LoadingScreen loadingScreen;
+        TimeSpan timeSpan = new TimeSpan(0, 0, 2);
 
-        int menu = 1;
+        int menu = -1;
 
-        public ScreenManager(Game game, MainMenu mainMenu, MainScene mainScene) : base(game)
+        public ScreenManager(Game game, MainMenu mainMenu, MainScene mainScene, LoadingScreen loadingScreen)
+            : base(game)
         {
             // TODO: Construct any child components here
             this.mainScene = mainScene;
             this.mainMenu = mainMenu;
+            this.loadingScreen = loadingScreen;
         }
 
         public override void Initialize()
@@ -37,30 +41,40 @@ namespace EggRollGameLib.ClassFiles.Menus
             base.Initialize();
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
-            if (menu == 0)
+            if (TimeSpan.Compare(gameTime.TotalGameTime, timeSpan) == -1)
             {
+                loadingScreen.Update(gameTime);
+            }
+            else if (menu == -1)
+            {
+                mainMenu.Update(gameTime);
                 menu = mainMenu.MenuSelect;
             }
-            else
+            else if (menu == 0)
             {
                 mainScene.Update(gameTime);
             }
 
-            //base.Update(gameTime);
+            base.Update(gameTime);
         }
 
         public void Draw(GameTime gameTime, GraphicsDevice graphics, SpriteBatch spriteBatch)
         {
-            if (menu == 0)
+            if (TimeSpan.Compare(gameTime.TotalGameTime, timeSpan) == -1)
             {
-                mainMenu.Draw(gameTime);
+                loadingScreen.Draw(graphics, spriteBatch);
             }
-            else
+            else if (menu == -1)
+            {
+                mainMenu.Draw(graphics, spriteBatch);
+            }
+            else if (menu == 0)
             {
                 mainScene.Draw(spriteBatch, graphics);
             }
+
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Egg_roll
 
         MainScene mainScene;
         MainMenu mainMenu;
+        LoadingScreen loadingScreen;
 
         Vector3 accelerometer;
 
@@ -51,7 +52,7 @@ namespace Egg_roll
 
         protected override void LoadContent()
         {
-            string[] menuItems = { "Start Game", "High Scores", "End Game" };
+            string[] menuItems = { "Start Game","High Scores","Settings","End Game" };
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mainMenu = new MainMenu(this,
             spriteBatch,
@@ -61,7 +62,8 @@ namespace Egg_roll
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mainScene = new MainScene(Content, graphics);
-            screenManager = new ScreenManager(this, mainMenu, mainScene);
+            loadingScreen = new LoadingScreen(this);
+            screenManager = new ScreenManager(this, mainMenu, mainScene, loadingScreen);
         }
 
         protected override void UnloadContent()

@@ -46,6 +46,15 @@
       <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb</Output>
       <Time>2012-10-24T16:10:42.3159657+02:00</Time>
     </Item>
+    <Item>
+      <Source>loadingfont.spritefont</Source>
+      <Name>loadingfont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\loadingfont.xnb</Output>
+      <Time>2012-10-28T00:42:25.6054854+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{14688FE8-514C-47EA-B8C7-AD98CF35FA62}</ContentProjectGUID>

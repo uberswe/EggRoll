@@ -65,11 +65,12 @@
     <Compile Include="ClassFiles\Input.cs" />
     <Compile Include="ClassFiles\MainScene.cs" />
     <Compile Include="ClassFiles\Menus\Button.cs" />
+    <Compile Include="ClassFiles\Menus\HighScores.cs" />
+    <Compile Include="ClassFiles\Menus\LoadingScreen.cs" />
     <Compile Include="ClassFiles\Menus\MainMenu.cs" />
     <Compile Include="ClassFiles\Menus\ScreenManager.cs" />
     <Compile Include="ClassFiles\OnScreenMessages.cs" />
     <Compile Include="ClassFiles\Player.cs" />
-    <Compile Include="ClassFiles\Sound.cs" />
     <Compile Include="ClassFiles\Sprite.cs" />
     <Compile Include="ClassFiles\Stuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
