@@ -37,7 +37,7 @@ namespace EggRollGameLib.ClassFiles.Menus
             base.Initialize();
         }
 
-        public void Update(GameTime gameTime, Vector3 gyroReading)
+        public void Update(GameTime gameTime)
         {
             if (menu == 0)
             {
@@ -45,7 +45,7 @@ namespace EggRollGameLib.ClassFiles.Menus
             }
             else
             {
-                mainScene.Update(gameTime, gyroReading);
+                mainScene.Update(gameTime);
             }
 
             //base.Update(gameTime);

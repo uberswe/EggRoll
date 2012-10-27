@@ -25,7 +25,9 @@ namespace Egg_roll
         MainScene mainScene;
         MainMenu mainMenu;
 
-        Vector3 gyroReading;
+        Vector3 accelerometer;
+
+        Accelerometer accel;
 
         public Game1()
         {
@@ -42,12 +44,14 @@ namespace Egg_roll
 
         protected override void Initialize()
         {
+            accel = new Accelerometer(); 
+            accel.Start();
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            string[] menuItems = { "Start Game", "High Scores", "Level Manager", "Character select", "End Game" };
+            string[] menuItems = { "Start Game", "High Scores", "End Game" };
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mainMenu = new MainMenu(this,
             spriteBatch,
@@ -67,21 +71,19 @@ namespace Egg_roll
 
         protected override void Update(GameTime gameTime)
         {
-            if (Gyroscope.IsSupported)
+            if (Accelerometer.IsSupported)
             {
-                GyroscopeReading gr = new GyroscopeReading();
-                gyroReading = gr.RotationRate;
+                AccelerometerReading ar = accel.CurrentValue;
+                accelerometer = ar.Acceleration;
+                MainScene.AccelData(accelerometer);
             }
-            else
-            {
-                gyroReading = new Vector3(0, 0, 0);
-            }
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
             {
                 this.Exit();
             }
 
-            screenManager.Update(gameTime, gyroReading);
+            screenManager.Update(gameTime);
 
             base.Update(gameTime);
         }

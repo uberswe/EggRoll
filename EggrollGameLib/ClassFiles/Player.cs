@@ -18,7 +18,7 @@ namespace EggrollGameLib.ClassFiles
         SoundEffect Jump;
         SoundEffect DamageTaken;
         Button btnRight, btnLeft, btnJump;
-        Vector3 gy;
+        float ay;
 
 
         public Player(List<Character> characters)
@@ -42,7 +42,7 @@ namespace EggrollGameLib.ClassFiles
             base.LoadContent();
         }
 
-        public void Update(float elaps, Vector3 gyroReading)
+        public void Update(float elaps, float yaccel)
         {btnRight.Update(elaps);
             btnLeft.Update(elaps);
             btnJump.Update(elaps);
@@ -57,7 +57,7 @@ namespace EggrollGameLib.ClassFiles
 
             Controls();
 
-            gy = gyroReading;
+            ay = yaccel;
 
             base.Update(elaps);
             Camera2d.Position = position + (Stuff.AngleToVector(sprite.Rotation + (float)Math.PI) * 20);
@@ -83,9 +83,9 @@ namespace EggrollGameLib.ClassFiles
             if (btnRight.active)
                 dir.X += 1f;
 
-            if (gy.X > 0 || gy.X < 0)
+            if (ay > 0 || ay < 0)
             {
-                dir.X += gy.X;
+                dir.X -= ay;
             }
 
             if (dir.X == 0 && onGround && sprite.Rotation != 0)

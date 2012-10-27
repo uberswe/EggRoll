@@ -13,7 +13,6 @@ namespace EggRollGameLib
         public static KeyboardState ks, pks;
         public static MouseState ms, pms;
         public static TouchCollection tc;
-        public static Vector3 gy;
         static int maxTouchCount;
 
 
@@ -27,14 +26,13 @@ namespace EggRollGameLib
             maxTouchCount = TouchPanel.GetCapabilities().MaximumTouchCount; 
                         
         }
-        public static void Update(Vector3 gyroReading)
+        public static void Update()
         {
             pks = ks;
             ks = Keyboard.GetState();
             pms = ms;
             ms = Mouse.GetState();
             tc = TouchPanel.GetState();
-            gy = gyroReading;
         }
 
         /// <summary>
