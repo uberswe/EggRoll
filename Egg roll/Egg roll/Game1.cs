@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework.Media;
 using EggRollGameLib;
 using EggRollGameLib.ClassFiles;
 using EggRollGameLib.ClassFiles.Menus;
+using Microsoft.Devices.Sensors;
+
 namespace Egg_roll
 {
     public class Game1 : Microsoft.Xna.Framework.Game
@@ -22,7 +24,9 @@ namespace Egg_roll
 
         MainScene mainScene;
         MainMenu mainMenu;
-        
+
+        Vector3 gyroReading;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -63,12 +67,21 @@ namespace Egg_roll
 
         protected override void Update(GameTime gameTime)
         {
+            if (Gyroscope.IsSupported)
+            {
+                GyroscopeReading gr = new GyroscopeReading();
+                gyroReading = gr.RotationRate;
+            }
+            else
+            {
+                gyroReading = new Vector3(0, 0, 0);
+            }
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
             {
                 this.Exit();
             }
 
-            screenManager.Update(gameTime);
+            screenManager.Update(gameTime, gyroReading);
 
             base.Update(gameTime);
         }

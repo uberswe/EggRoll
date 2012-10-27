@@ -35,8 +35,7 @@ namespace EggRollGameLib.ClassFiles.Menus
         }
 
         //Gets info from game and menu items.
-        public MainMenu(Game game, SpriteBatch spriteBatch, SpriteFont spriteFont, string[] menuItems)
-            : base(game)
+        public MainMenu(Game game, SpriteBatch spriteBatch, SpriteFont spriteFont, string[] menuItems) : base(game)
         {
             this.spriteBatch = spriteBatch;
             this.spriteFont = spriteFont;
@@ -70,7 +69,7 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         public override void Update(GameTime gameTime)
         {
-            Input.Update();
+            //Input.Update();
             foreach (Button b in buttons)
             {
                 b.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -81,7 +80,7 @@ namespace EggRollGameLib.ClassFiles.Menus
         //draws menu items
         public override void Draw(GameTime gameTime)
         {
-            if (menu == 1)
+            if (menu == 0)
             {
                 int location1;
                 int location2;

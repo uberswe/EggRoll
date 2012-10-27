@@ -11,7 +11,6 @@ using Microsoft.Xna.Framework.Audio;
 using EggrollGameLib.ClassFiles.Menus;
 using Microsoft.Xna.Framework.Graphics;
 
-
 namespace EggrollGameLib.ClassFiles
 {
     class Player : Character
@@ -19,6 +18,8 @@ namespace EggrollGameLib.ClassFiles
         SoundEffect Jump;
         SoundEffect DamageTaken;
         Button btnRight, btnLeft, btnJump;
+        Vector3 gy;
+
 
         public Player(List<Character> characters)
             : base()
@@ -32,7 +33,7 @@ namespace EggrollGameLib.ClassFiles
 
             btnRight = new Button("pixel", new Vector2(250, 420), new Rectangle(0, 0, 150, 100));
             btnLeft = new Button("pixel", new Vector2(90, 420), new Rectangle(0, 0, 150, 100));
-            btnJump = new Button("pixel", new Vector2(700, 420), new Rectangle(0, 0, 150, 100));
+            btnJump = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
             weight = 9f;
         }
 
@@ -41,9 +42,8 @@ namespace EggrollGameLib.ClassFiles
             base.LoadContent();
         }
 
-        public override void Update(float elaps)
-        {
-            btnRight.Update(elaps);
+        public void Update(float elaps, Vector3 gyroReading)
+        {btnRight.Update(elaps);
             btnLeft.Update(elaps);
             btnJump.Update(elaps);
 
@@ -56,6 +56,8 @@ namespace EggrollGameLib.ClassFiles
                 onGround = false;
 
             Controls();
+
+            gy = gyroReading;
 
             base.Update(elaps);
             Camera2d.Position = position + (Stuff.AngleToVector(sprite.Rotation + (float)Math.PI) * 20);
@@ -80,6 +82,11 @@ namespace EggrollGameLib.ClassFiles
                 dir.X -= 1f;
             if (btnRight.active)
                 dir.X += 1f;
+
+            if (gy.X > 0 || gy.X < 0)
+            {
+                dir.X += gy.X;
+            }
 
             if (dir.X == 0 && onGround && sprite.Rotation != 0)
                 dir.X = Stuff.AngleToVector(sprite.Rotation).X;

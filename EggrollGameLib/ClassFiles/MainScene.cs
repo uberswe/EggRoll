@@ -18,6 +18,11 @@ namespace EggRollGameLib.ClassFiles
         Player player;
         List<Sprite> debugTiles;
 
+        SpriteFont Font1;
+        Vector2 FontPos;
+
+        Vector3 gyro;
+
         public MainScene(ContentManager content, GraphicsDeviceManager graphicsManager)
         {
             Stuff.Initialize(content, graphicsManager);
@@ -37,11 +42,11 @@ namespace EggRollGameLib.ClassFiles
             }
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Vector3 gyroReading)
         {
             elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
             totaltPlayTime += elaps;
-            Input.Update();
+            Input.Update(gyroReading);
             onScreenMessages.Update(elaps);
 
             int c = characters.Count;
@@ -49,7 +54,10 @@ namespace EggRollGameLib.ClassFiles
             {
                 characters[i].Update(elaps);
             }
-            player.Update(elaps);
+
+            gyro = gyroReading;
+
+            player.Update(elaps, gyroReading);
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphics)
@@ -73,10 +81,22 @@ namespace EggRollGameLib.ClassFiles
 
             player.Draw(spriteBatch);
 
+            FontPos = new Vector2(20, 20);
+
+            Font1 = Stuff.Content.Load<SpriteFont>("menufont");
+
+            string output = gyro.X.ToString("0.00") + " Y = " + gyro.Y.ToString("0.00") + " Z = " + gyro.Z.ToString("0.00");
+
+            Vector2 FontOrigin = Font1.MeasureString(output) / 2;
+            spriteBatch.DrawString(Font1, output, FontPos, Color.LightGreen, 0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+
             spriteBatch.End();
 
             spriteBatch.Begin();
+
             player.DrawButtons(spriteBatch);
+
+            
             spriteBatch.End();
 
         }
