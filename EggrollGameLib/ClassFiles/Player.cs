@@ -22,6 +22,8 @@ namespace EggrollGameLib.ClassFiles
         float ay;
         ScreenManager screenManager;
 
+        bool pressingJump = false;
+
         public Player(List<Character> characters) : base()
         {
             this.characters = characters;
@@ -125,8 +127,17 @@ namespace EggrollGameLib.ClassFiles
                     onGround = false;
                     gravForce = new Vector2(0, -3f);
                 }
+                else if (gravForce.Y >= -4f && pressingJump == true && gravForce.Y < 0f)
+                {
+                    gravForce.Y = gravForce.Y - 0.2f;
+                }
+                pressingJump = true;
                 //gravForce = Vector2.Zero; 
                 //position = new Vector2(100, 100); 
+            }
+            else
+            {
+                pressingJump = false;
             }
         }
     }
