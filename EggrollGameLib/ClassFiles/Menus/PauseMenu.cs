@@ -12,13 +12,11 @@ using Microsoft.Xna.Framework.Media;
 using EggrollGameLib.ClassFiles;
 using EggrollGameLib.ClassFiles.Menus;
 
-
 namespace EggRollGameLib.ClassFiles.Menus
 {
-
-    public class HighScores : Microsoft.Xna.Framework.GameComponent
+    public class PauseMenu : Microsoft.Xna.Framework.GameComponent
     {
-        Button btnBack;
+        Button btnBack, btnResume;
 
         Color fontColor = Color.White;
 
@@ -27,10 +25,11 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         ScreenManager screenManager;
 
-        public HighScores(Game game)
+        public PauseMenu(Game game)
             : base(game)
         {
             btnBack = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
+            btnResume = new Button("pixel", new Vector2(710, 300), new Rectangle(0, 0, 150, 100));
         }
 
         /// <summary>
@@ -44,12 +43,16 @@ namespace EggRollGameLib.ClassFiles.Menus
             base.Initialize();
         }
 
+        /// <summary>
+        /// Allows the game component to update itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, ScreenManager screenManager)
         {
             this.screenManager = screenManager;
-
             Input.Update();
             btnBack.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            btnResume.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             Controls();
 
@@ -65,20 +68,27 @@ namespace EggRollGameLib.ClassFiles.Menus
             spriteBatch.Begin();
             spriteBatch.DrawString(
                 spriteFont,
-                "High Scores",
+                "Game Paused",
                 position,
                 fontColor);
             btnBack.Draw(spriteBatch);
+            btnResume.Draw(spriteBatch);
             spriteBatch.End();
 
         }
-
         private void Controls()
         {
+
             if (btnBack.active)
             {
                 screenManager.CurrentMenu = -1;
+                screenManager.ResetGame();
             }
+            else if (btnResume.active)
+            {
+                screenManager.CurrentMenu = 0;
+            }
+
         }
     }
 }

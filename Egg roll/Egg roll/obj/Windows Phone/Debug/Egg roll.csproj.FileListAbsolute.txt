@@ -34,27 +34,8 @@ C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\
 C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
 C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.pdb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.dll
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.pdb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.csprojResolveAssemblyReference.cache
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb
-C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\loadingfont.xnb
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb
@@ -72,31 +53,25 @@ C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg ro
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
-bin\Windows Phone\Debug\
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\loadingfont.xnb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.pdb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.dll
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.pdb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
-C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Font.xnb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\menufont.xnb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\loadingfont.xnb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.pdb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.dll
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\EggrollGameLib.pdb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.csprojResolveAssemblyReference.cache
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
 bin\Windows Phone\Debug\
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
+C:\Users\BigMac\Documents\Egg Roll Github\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
