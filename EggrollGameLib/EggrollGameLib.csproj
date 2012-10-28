@@ -49,6 +49,7 @@
     <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Device, Version=2.0.5.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>

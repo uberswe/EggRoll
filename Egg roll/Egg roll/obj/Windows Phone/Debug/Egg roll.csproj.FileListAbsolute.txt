@@ -94,3 +94,9 @@ C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
+C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\
