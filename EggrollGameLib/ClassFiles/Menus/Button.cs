@@ -48,7 +48,7 @@ namespace EggrollGameLib.ClassFiles.Menus
             bool buttonHit = false;
             foreach (TouchLocation tc in Input.tc)
                 if (tc.State == TouchLocationState.Moved || tc.State == TouchLocationState.Pressed)
-                    if (hitbox.Intersects(new Rectangle((int)tc.Position.X, (int)tc.Position.Y, 5, 5)))
+                    if (hitbox.Intersects(new Rectangle((int)tc.Position.X, (int)tc.Position.Y, 1, 1)))
                         buttonHit = true;
 
             if (buttonHit)

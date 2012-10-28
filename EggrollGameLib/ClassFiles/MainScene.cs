@@ -18,9 +18,6 @@ namespace EggRollGameLib.ClassFiles
         Player player;
         List<Sprite> debugTiles;
 
-        SpriteFont Font1;
-        Vector2 FontPos;
-
         public static float yaccel;
 
         public MainScene(ContentManager content, GraphicsDeviceManager graphicsManager)
