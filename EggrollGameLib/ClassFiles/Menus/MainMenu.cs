@@ -27,12 +27,8 @@ namespace EggRollGameLib.ClassFiles.Menus
         Vector2 position;
         float width = 0f;
         float height = 0f;
-        int menu = -1; //-1 = main, 0 = game
 
-        public int MenuSelect
-        {
-            get { return menu; }
-        }
+        ScreenManager screenManager;
 
         //Gets info from game and menu items.
         public MainMenu(Game game, SpriteBatch spriteBatch, SpriteFont spriteFont, string[] menuItems) : base(game)
@@ -66,8 +62,9 @@ namespace EggRollGameLib.ClassFiles.Menus
             base.Initialize();
         }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ScreenManager screenManager)
         {
+            this.screenManager = screenManager;
             Input.Update();
             foreach (Button b in buttons)
             {
@@ -110,14 +107,14 @@ namespace EggRollGameLib.ClassFiles.Menus
         {
             if (Input.KeyDown(Keys.Space) || Input.KeyDown(Keys.Enter))
             {
-                menu = 0;
+                screenManager.CurrentMenu = 0;
             }
             int i = 0;
             foreach (Button b in buttons)
             {
                 if (b.active)
                 {
-                    menu = i;
+                    screenManager.CurrentMenu = i;
                     break;
                 }
                 i++;

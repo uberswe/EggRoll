@@ -25,6 +25,14 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         int menu = -1;
 
+        public int CurrentMenu
+        {
+            get { return menu; }
+            set { 
+                menu = value;
+            }
+        }
+
         public ScreenManager(Game game, MainMenu mainMenu, MainScene mainScene, LoadingScreen loadingScreen)
             : base(game)
         {
@@ -49,12 +57,11 @@ namespace EggRollGameLib.ClassFiles.Menus
             }
             else if (menu == -1)
             {
-                mainMenu.Update(gameTime);
-                menu = mainMenu.MenuSelect;
+                mainMenu.Update(gameTime, this);
             }
             else if (menu == 0)
             {
-                mainScene.Update(gameTime);
+                mainScene.Update(gameTime, this);
             }
             else
             {

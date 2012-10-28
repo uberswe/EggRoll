@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using EggrollGameLib.ClassFiles;
+using EggRollGameLib.ClassFiles.Menus;
 
 namespace EggRollGameLib.ClassFiles
 {
@@ -39,7 +40,7 @@ namespace EggRollGameLib.ClassFiles
             }
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ScreenManager screenManager)
         {
             elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
             totaltPlayTime += elaps;
@@ -52,7 +53,7 @@ namespace EggRollGameLib.ClassFiles
                 characters[i].Update(elaps);
             }
 
-            player.Update(elaps, yaccel);
+            player.Update(elaps, yaccel, screenManager);
         }
 
         public static void AccelData(Vector3 AccelerationReading)

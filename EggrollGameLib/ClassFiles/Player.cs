@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Audio;
 using EggrollGameLib.ClassFiles.Menus;
 using Microsoft.Xna.Framework.Graphics;
+using EggRollGameLib.ClassFiles.Menus;
 
 namespace EggrollGameLib.ClassFiles
 {
@@ -17,12 +18,11 @@ namespace EggrollGameLib.ClassFiles
     {
         SoundEffect Jump;
         SoundEffect DamageTaken;
-        Button btnRight, btnLeft, btnJump;
+        Button btnRight, btnLeft, btnJump, btnPause;
         float ay;
+        ScreenManager screenManager;
 
-
-        public Player(List<Character> characters)
-            : base()
+        public Player(List<Character> characters) : base()
         {
             this.characters = characters;
             sprite = new Sprite("egg");
@@ -34,6 +34,9 @@ namespace EggrollGameLib.ClassFiles
             btnRight = new Button("pixel", new Vector2(250, 420), new Rectangle(0, 0, 150, 100));
             btnLeft = new Button("pixel", new Vector2(90, 420), new Rectangle(0, 0, 150, 100));
             btnJump = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
+
+            btnPause = new Button("pixel", new Vector2(710, 50), new Rectangle(0, 0, 50, 50));
+
             weight = 9f;
         }
 
@@ -42,10 +45,13 @@ namespace EggrollGameLib.ClassFiles
             base.LoadContent();
         }
 
-        public void Update(float elaps, float yaccel)
-        {btnRight.Update(elaps);
+        public void Update(float elaps, float yaccel, ScreenManager screenManager)
+        {
+            this.screenManager = screenManager;
+            btnRight.Update(elaps);
             btnLeft.Update(elaps);
             btnJump.Update(elaps);
+            btnPause.Update(elaps);
 
             if (position.Y >= 300)
             {
@@ -73,6 +79,7 @@ namespace EggrollGameLib.ClassFiles
             btnJump.Draw(spriteBatch);
             btnRight.Draw(spriteBatch);
             btnLeft.Draw(spriteBatch);
+            btnPause.Draw(spriteBatch);
         }
 
         private void Controls()
@@ -82,6 +89,11 @@ namespace EggrollGameLib.ClassFiles
                 dir.X -= 2f;
             if (btnRight.active)
                 dir.X += 2f;
+
+            if (btnPause.active)
+            {
+                screenManager.CurrentMenu = -1;
+            }
 
             if (ay > 0.15 || ay < -0.15)
             {
