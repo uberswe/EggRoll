@@ -85,6 +85,14 @@ namespace EggrollGameLib.ClassFiles
 
             if (ay > 0.15 || ay < -0.15)
             {
+                if (ay >= 0.60)
+                {
+                    ay = (float)0.60;
+                }
+                if (ay <= -0.60)
+                {
+                    ay = (float)-0.60;
+                }
                 dir.X -= ay * 3;
             }
 

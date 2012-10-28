@@ -91,8 +91,8 @@ namespace EggRollGameLib.ClassFiles.Menus
                 location1 = Convert.ToInt32(location.X);
                 location2 = Convert.ToInt32(location.Y);
                 Vector2 stringSize = spriteFont.MeasureString(menuItems[i]);
-                int width = Convert.ToInt32(stringSize.X);
-                int height = Convert.ToInt32(stringSize.Y);
+                int width = Convert.ToInt32(stringSize.X + 200); 
+                int height = Convert.ToInt32(stringSize.Y + 70);
                 Rectangle menuItem = new Rectangle(location1, location2, width, height);
                 Button button = new Button("pixel", location, menuItem);
                 button.sprite.Origin = Vector2.Zero;
@@ -105,7 +105,8 @@ namespace EggRollGameLib.ClassFiles.Menus
                 menuItems[i],
                 location,
                 fontColor);
-                location.Y += spriteFont.LineSpacing + 5;
+                location.Y += spriteFont.LineSpacing + 75;
+                //location.X += spriteFont.LineSpacing + 50;
             }
             spriteBatch.End();
             buttons = buttonstemp;

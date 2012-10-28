@@ -56,6 +56,10 @@ namespace EggRollGameLib.ClassFiles.Menus
             {
                 mainScene.Update(gameTime);
             }
+            else
+            {
+                base.Game.Exit();
+            }
 
             base.Update(gameTime);
         }
@@ -73,6 +77,10 @@ namespace EggRollGameLib.ClassFiles.Menus
             else if (menu == 0)
             {
                 mainScene.Draw(spriteBatch, graphics);
+            }
+            else
+            {
+                base.Game.Exit();
             }
 
         }
