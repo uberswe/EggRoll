@@ -48,6 +48,11 @@ namespace EggRollGameLib
             sprite.DrawAt(spriteBatch, position);
         }
 
+        public Vector2 Position
+        {
+            get { return position; }
+        }
+
         /// <summary>
         /// 
         /// </summary>

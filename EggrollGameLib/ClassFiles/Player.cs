@@ -72,6 +72,7 @@ namespace EggrollGameLib.ClassFiles
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            //spriteBatch.DrawString( "PosX" + position.X + " PosY: " + position.Y,);
         }
 
         public void DrawButtons(SpriteBatch spriteBatch)
@@ -85,10 +86,15 @@ namespace EggrollGameLib.ClassFiles
         private void Controls()
         {
             Vector2 dir = Vector2.Zero;
+            
             if (btnLeft.active)
                 dir.X -= 2f;
             if (btnRight.active)
-                dir.X += 2f;
+            {
+                dir.X += 1f;
+                position.Y -= 10f;
+                onGround = true;
+            }
 
             if (btnPause.active)
             {

@@ -12,18 +12,21 @@ namespace EggRollGameLib.ClassFiles
 {
     public class MainScene
     {
+        GraphicsDeviceManager graphics;
         OnScreenMessages onScreenMessages;
         float elaps, totaltPlayTime;
         Input input;
         List<Character> characters;
         Player player;
         List<Sprite> debugTiles;
+        Rectangle DrawRect;
 
         public static float yaccel;
 
         public MainScene(ContentManager content, GraphicsDeviceManager graphicsManager)
         {
             Stuff.Initialize(content, graphicsManager);
+            graphics = graphicsManager;
             onScreenMessages = new OnScreenMessages();
             Camera2d.Position = Stuff.ScreenCenter;
             input = new Input();
@@ -38,15 +41,22 @@ namespace EggRollGameLib.ClassFiles
                 s.Position = new Vector2(i * 150, 400);
                 debugTiles.Add(s);
             }
+            for (int i = 0; i < 100; i++)
+            {
+                Sprite tempSprite = new Sprite("SpriteSheet");
+                tempSprite.Source = new Rectangle(11 * 150, 9 * 150, 150, 150);
+                tempSprite.Position = new Vector2(150*i, 250 + (-150*i));
+                debugTiles.Add(tempSprite);
+            }
         }
 
         public void Update(GameTime gameTime, ScreenManager screenManager)
         {
+            DrawRect = new Rectangle((int)player.Position.X - (graphics.PreferredBackBufferWidth / 2) - 150, (int)player.Position.Y - (graphics.PreferredBackBufferHeight / 2) - 150, graphics.PreferredBackBufferWidth + 300, graphics.PreferredBackBufferHeight + 300);
             elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
             totaltPlayTime += elaps;
             Input.Update();
             onScreenMessages.Update(elaps);
-
             int c = characters.Count;
             for (int i = 0; i < c; i++)
             {
@@ -72,13 +82,15 @@ namespace EggRollGameLib.ClassFiles
             int c = characters.Count;
             for (int i = 0; i < c; i++)
             {
-                characters[i].Draw(spriteBatch);
+                if (DrawRect.Contains((int)characters[i].Position.X, (int)characters[i].Position.Y))
+                    characters[i].Draw(spriteBatch);
             }
 
             c = debugTiles.Count;
             for (int i = 0; i < c; i++)
             {
-                debugTiles[i].Draw(spriteBatch);
+                if(DrawRect.Contains((int)debugTiles[i].Position.X, (int)debugTiles[i].Position.Y))
+                    debugTiles[i].Draw(spriteBatch);
             }
 
             player.Draw(spriteBatch);
