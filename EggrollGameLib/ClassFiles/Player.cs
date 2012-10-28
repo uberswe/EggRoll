@@ -86,14 +86,12 @@ namespace EggrollGameLib.ClassFiles
         private void Controls()
         {
             Vector2 dir = Vector2.Zero;
-            
+            onGround = true;
             if (btnLeft.active)
                 dir.X -= 2f;
             if (btnRight.active)
             {
-                dir.X += 1f;
-                position.Y -= 10f;
-                onGround = true;
+                dir.X += 2f;
             }
 
             if (btnPause.active)

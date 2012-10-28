@@ -76,6 +76,7 @@
     <Compile Include="ClassFiles\Server\ServerHandler.cs" />
     <Compile Include="ClassFiles\Sprite.cs" />
     <Compile Include="ClassFiles\Stuff.cs" />
+    <Compile Include="ClassFiles\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
