@@ -12,12 +12,11 @@ using Microsoft.Xna.Framework.Media;
 using EggrollGameLib.ClassFiles;
 using EggrollGameLib.ClassFiles.Menus;
 
-
 namespace EggRollGameLib.ClassFiles.Menus
 {
-
-    public class HighScores : Microsoft.Xna.Framework.GameComponent
+    public class SettingsMenu : Microsoft.Xna.Framework.GameComponent
     {
+
         Button btnBack;
 
         Color fontColor = Color.White;
@@ -27,7 +26,7 @@ namespace EggRollGameLib.ClassFiles.Menus
 
         ScreenManager screenManager;
 
-        public HighScores(Game game)
+        public SettingsMenu(Game game)
             : base(game)
         {
             btnBack = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
@@ -44,10 +43,13 @@ namespace EggRollGameLib.ClassFiles.Menus
             base.Initialize();
         }
 
+        /// <summary>
+        /// Allows the game component to update itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, ScreenManager screenManager)
         {
             this.screenManager = screenManager;
-
             Input.Update();
             btnBack.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
@@ -55,7 +57,6 @@ namespace EggRollGameLib.ClassFiles.Menus
 
             base.Update(gameTime);
         }
-
 
         public void Draw(GraphicsDevice graphics, SpriteBatch spriteBatch)
         {
@@ -65,14 +66,13 @@ namespace EggRollGameLib.ClassFiles.Menus
             spriteBatch.Begin();
             spriteBatch.DrawString(
                 spriteFont,
-                "High Scores",
+                "Settings",
                 position,
                 fontColor);
             btnBack.Draw(spriteBatch);
             spriteBatch.End();
 
         }
-
         private void Controls()
         {
             if (btnBack.active)

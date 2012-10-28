@@ -35,7 +35,7 @@ namespace EggrollGameLib.ClassFiles
             btnLeft = new Button("pixel", new Vector2(90, 420), new Rectangle(0, 0, 150, 100));
             btnJump = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
 
-            btnPause = new Button("pixel", new Vector2(710, 50), new Rectangle(0, 0, 50, 50));
+            btnPause = new Button("pixel", new Vector2(710, 50), new Rectangle(0, 0, 100, 100));
 
             weight = 9f;
         }
@@ -92,7 +92,7 @@ namespace EggrollGameLib.ClassFiles
 
             if (btnPause.active)
             {
-                screenManager.CurrentMenu = -1;
+                screenManager.CurrentMenu = 4;
             }
 
             if (ay > 0.15 || ay < -0.15)

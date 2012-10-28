@@ -93,5 +93,11 @@ namespace EggRollGameLib.ClassFiles
             spriteBatch.End();
 
         }
+
+        public void ResetGame()
+        {
+            characters = new List<Character>();
+            player = new Player(characters);
+        }
     }
 }

@@ -17,10 +17,15 @@ namespace EggRollGameLib.ClassFiles.Menus
 
     public class ScreenManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
-
         MainScene mainScene;
         MainMenu mainMenu;
         LoadingScreen loadingScreen;
+        HighScores highScores;
+        SettingsMenu settingsMenu;
+        PauseMenu pauseMenu;
+
+        SpriteBatch spriteBatch;
+
         TimeSpan timeSpan = new TimeSpan(0, 0, 2);
 
         int menu = -1;
@@ -28,18 +33,25 @@ namespace EggRollGameLib.ClassFiles.Menus
         public int CurrentMenu
         {
             get { return menu; }
-            set { 
-                menu = value;
-            }
+            set {  menu = value; }
         }
 
-        public ScreenManager(Game game, MainMenu mainMenu, MainScene mainScene, LoadingScreen loadingScreen)
-            : base(game)
+        public ScreenManager(Game game, SpriteBatch spriteBatch, GraphicsDeviceManager graphics) : base(game)
         {
             // TODO: Construct any child components here
-            this.mainScene = mainScene;
-            this.mainMenu = mainMenu;
-            this.loadingScreen = loadingScreen;
+
+            mainScene = new MainScene(game.Content, graphics);
+            loadingScreen = new LoadingScreen(game);
+            string[] menuItems = { "Start Game", "High Scores", "Settings", "End Game" };
+            this.spriteBatch = spriteBatch;
+            mainMenu = new MainMenu(game,
+            spriteBatch,
+            game.Content.Load<SpriteFont>("menufont"),
+            menuItems);
+            game.Components.Add(mainMenu);
+            highScores = new HighScores(game);
+            settingsMenu = new SettingsMenu(game);
+            pauseMenu = new PauseMenu(game);
         }
 
         public override void Initialize()
@@ -63,6 +75,22 @@ namespace EggRollGameLib.ClassFiles.Menus
             {
                 mainScene.Update(gameTime, this);
             }
+            else if (menu == 1)
+            {
+                highScores.Update(gameTime, this);
+            }
+            else if (menu == 2)
+            {
+                settingsMenu.Update(gameTime, this);
+            }
+            else if (menu == 3)
+            {
+                base.Game.Exit();
+            }
+            else if (menu == 4)
+            {
+                pauseMenu.Update(gameTime, this);
+            }
             else
             {
                 base.Game.Exit();
@@ -85,11 +113,32 @@ namespace EggRollGameLib.ClassFiles.Menus
             {
                 mainScene.Draw(spriteBatch, graphics);
             }
+            else if (menu == 1)
+            {
+                highScores.Draw(graphics, spriteBatch);
+            }
+            else if (menu == 2)
+            {
+                settingsMenu.Draw(graphics, spriteBatch);
+            }
+            else if (menu == 3)
+            {
+                base.Game.Exit();
+            }
+            else if (menu == 4)
+            {
+                pauseMenu.Draw(graphics, spriteBatch);
+            }
             else
             {
                 base.Game.Exit();
             }
 
+        }
+
+        public void ResetGame()
+        {
+            mainScene.ResetGame();
         }
     }
 }
