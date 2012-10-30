@@ -1,11 +1,9 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egg roll", "Egg roll\Egg roll\Egg roll.csproj", "{ED7804E7-14E0-4FD6-A0D7-3944B51E32EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egg rollContent", "Egg roll\Egg rollContent\Egg rollContent.contentproj", "{14688FE8-514C-47EA-B8C7-AD98CF35FA62}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggrollGameLib", "EggrollGameLib\EggrollGameLib.csproj", "{E088A2B3-C4EB-4C37-AF88-6DDC96EF27F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		{ED7804E7-14E0-4FD6-A0D7-3944B51E32EE}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
 		{14688FE8-514C-47EA-B8C7-AD98CF35FA62}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
 		{14688FE8-514C-47EA-B8C7-AD98CF35FA62}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{E088A2B3-C4EB-4C37-AF88-6DDC96EF27F2}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{E088A2B3-C4EB-4C37-AF88-6DDC96EF27F2}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{E088A2B3-C4EB-4C37-AF88-6DDC96EF27F2}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{E088A2B3-C4EB-4C37-AF88-6DDC96EF27F2}.Release|Windows Phone.Build.0 = Release|Windows Phone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

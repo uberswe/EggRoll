@@ -1,0 +1,152 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+
+namespace Egg_roll
+{
+    class Stuff
+    {
+        private static Random rand = new Random();
+        public static ContentManager Content;
+        public static Point Resolution;
+        public static GraphicsDeviceManager Graphics;
+        public static Vector2 Gravity = new Vector2(0, 1); 
+
+        public static void Initialize(ContentManager content, GraphicsDeviceManager graphics)
+        {
+            Content = content;
+            Graphics = graphics;
+            //SetResolution(1280, 800);
+            SetResolution(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height);
+            //SetResolution(1920, 1080);
+            rectangleSprite = Content.Load<Texture2D>("Sprites\\pixel");
+        }
+        public static bool ToggleResolution()
+        {
+            if (Graphics.GraphicsDevice.DisplayMode.Height == 1080)
+            {
+                SetResolution(1366, 768);
+                return true; 
+            }
+            else
+                SetResolution(1920, 1080);
+            return false;
+        }
+
+        static Texture2D rectangleSprite;
+
+        public static void DrawRectangle(SpriteBatch spriteBatch, Rectangle rectangle)
+        {
+            spriteBatch.Draw(rectangleSprite, rectangle, Color.Red);
+        }
+
+        public static Sprite SheetSprite(int x, int y, int spriteSize, string sheet, float size)
+        {
+            Sprite s = new Sprite(sheet);
+            s.Source = new Rectangle((x * spriteSize) + 1, (y * spriteSize) + 1, spriteSize - 2, spriteSize - 2);
+            s.Scale = size;
+            return s;
+        }
+        public static void SetResolution(int x, int y)
+        {
+            Resolution = new Point(x, y);
+            Graphics.PreferredBackBufferWidth = x;
+            Graphics.PreferredBackBufferHeight = y;
+            Graphics.ApplyChanges();
+            rand = new Random();
+        }
+
+        public static Color BlendColors(Color color, Color targetColor, int amount)
+        {
+            if (amount >= 100)
+                return targetColor;
+            else if (amount <= 0)
+                return color;
+            float f = 100 - amount;
+            float r = color.R, g = color.G, b = color.B, a = color.A;
+            r += (float)(targetColor.R - color.R) / f;
+            g += (float)(targetColor.G - color.G) / f;
+            b += (float)(targetColor.B - color.B) / f;
+            a += (float)(targetColor.A - color.A) / f;
+
+            return new Color((byte)r, (byte)g, (byte)b, (byte)a);
+        }
+
+        public static Vector2 ScreenCenter
+        {
+            get { return new Vector2(Resolution.X / 2f, Resolution.Y / 2f); }
+        }
+
+        public static Vector2 RandomDirection()
+        {
+            float f = Stuff.RandomInt(-3000, 3000);
+            f /= 1000f;
+            return Stuff.AngleToVector(f);
+        }
+        public static int RandomInt(int min, int max)
+        {
+            return rand.Next(min, max);
+        }
+
+        public static bool PercentChance(int percent)
+        {
+            if (RandomInt(0, 101) < percent)
+                return true;
+            return false;
+        }
+
+
+
+        public static Vector2 GetDirectionFromAim(Vector2 pos, Vector2 aim)
+        {
+            return Vector2.Normalize(aim - pos);
+        }
+
+        public static float GetRotationFromAim(Vector2 position, Vector2 aimAt)
+        {
+            Vector2 dir = position - aimAt;
+            return (float)((Math.Atan2(-dir.Y, -dir.X)) - (Math.PI / 2));
+        }
+
+        public static Vector2 Lerp(Vector2 x, Vector2 y, float z)
+        {
+            return new Vector2(Lerp(x.X, y.X, z), Lerp(x.Y, y.Y, z));
+        }
+        public static float Lerp(float x, float y, float z)
+        {
+            return ((1 - z) * x) + (z * y);
+        }
+
+        public static float DirectionToAngle(Vector2 direction)
+        {
+            return (float)(Math.Atan2(-direction.Y, -direction.X) + Math.PI / 2f);
+        }
+        public static Vector2 GetPositionFromAngle(float angle, float distance, Vector2 objectPosition)
+        {
+            return new Vector2((float)(distance * Math.Cos(angle)), (float)(distance * Math.Sin(angle))) + objectPosition;
+        }
+        public static Vector2 AngleToVector(float rotation)
+        {
+            float f = (float)Math.PI / 2f;
+            return new Vector2((float)Math.Cos(rotation + f), (float)Math.Sin(rotation + f));
+        }
+
+        /// <summary>
+        /// if direction is pointing towards aim, return true
+        /// </summary>
+        public static bool DirectedAt(Vector2 position, Vector2 direction, Vector2 aim)
+        {
+            Vector2 wd = Vector2.Normalize(aim - position);
+            Vector2 d = Vector2.Normalize(direction);
+
+            if (Vector2.Distance(wd, d) < 1f)
+                return true;
+            return false;
+        }
+    }
+}

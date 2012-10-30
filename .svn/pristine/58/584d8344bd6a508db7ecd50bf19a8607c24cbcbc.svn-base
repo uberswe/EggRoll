@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Egg_roll.Animation" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAgASAQgAAgAAIAAAAgAAAAgAAAQAAIAA=</HashCode>
+      <FileName>AnimatedSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.AnimatedSprite" Collapsed="true">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAQAAAAAgAAABAAEABQgAAhEAAAAAAAIAAAIBA=</HashCode>
+      <FileName>AnimatedSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Camera2d" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAACIAgEACAAJAAAAAEAACAAAAEAAACAAQ=</HashCode>
+      <FileName>Camera2d.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Character" Collapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUBAAAAQAAAIgAkAAAAIgEAABABAQAgAAAAAACAAAQ=</HashCode>
+      <FileName>Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Game1" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAgAAAAAAgAAAAAAEAAAAY=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.GameObject" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAgAEAA4AAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Input" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAIgYCAAEAAEAIAAABAAAQIEAQAACACIAA=</HashCode>
+      <FileName>Input.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.MainScene" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAkEAAAAAAABAQAABAFgRAAAAAAAAAAA=</HashCode>
+      <FileName>MainScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.NameObject" Collapsed="true">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.FloatingMessage" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYBAAAABAAkIgAEAIAAIAAAAAAAAQCIQAAAAAAAACA=</HashCode>
+      <FileName>OnScreenMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.OnScreenMessages" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAgAAgAAAAAAAAAAAAAAAAEBAAAAAAAAAAA=</HashCode>
+      <FileName>OnScreenMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Player" Collapsed="true">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAChAAAgBgAMABAIAAAAAAAAgAAAAggNAAAAQ=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.SourceObject" Collapsed="true">
+    <Position X="1.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Sprite" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAACAAAAggAgoAAAKKAEAAiCAAAAAAMAAIADAgAAAQ=</HashCode>
+      <FileName>Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.ImprovedColor" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAqAQgBqAEAAQA=</HashCode>
+      <FileName>Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Stuff" Collapsed="true">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIDQAgQIIQAAAAAAgAAACABgEAgAgMgAAAhAEAA=</HashCode>
+      <FileName>Stuff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Tile" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAgAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Weather" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEQAQBAAAMAABCAAAAAIAAAACAAAAACAQgAAhEAAAAQ=</HashCode>
+      <FileName>Weather.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.WorldGen" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEMAAAQAEAwIAAEEQAEABACAABEKACAAAAABAAQA=</HashCode>
+      <FileName>WorldGen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.Button" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAQAAAAAAgAAAAAAIAACABAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Menus\Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.HighScores" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Menus\HighScores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.LoadingScreen" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACAAwAAACAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menus\LoadingScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.MainMenu" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAwQAYAAQAAAAAAAAAAAAAAAgAEAAAAA=</HashCode>
+      <FileName>Menus\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.Menu" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAAAAAAAAAABAAAAAAEAAAAA=</HashCode>
+      <FileName>Menus\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.PauseMenu" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAACAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Menus\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.ScreenManager" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABABAAIAAggEAAQAQAAgAAAAAFAAAAAAAABAAAAA=</HashCode>
+      <FileName>Menus\ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.Menus.SettingsMenu" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Menus\SettingsMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Egg_roll.ClassFiles.Server.ServerHandler" Collapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Server\ServerHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Egg_roll.WeatherForecast" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgBQQAAQAQQAQAIAAAAIiCQIAAAAAAABQAIgAgCAAA=</HashCode>
+      <FileName>Weather.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
