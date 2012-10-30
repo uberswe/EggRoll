@@ -204,7 +204,7 @@ namespace Egg_roll
             else
                 direction.X = -tempDir;
 
-            sprite.Rotation += direction.X * (speed * 0.00075f);
+            sprite.Rotation += direction.X * (speed * 0.00050f);
             sprite.Rotation = sprite.Rotation % (float)(Math.PI * 2f);
 
             if (btnJump.active)

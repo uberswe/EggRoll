@@ -18,11 +18,11 @@ Below are contact details for all students who worked on the project.
 
 Github username - Name - Email - Website
 
-MarkusTenghamn - Markus Tenghamn - mtn11005@student.mdh.se - MarkusTenghamn.com
+MarkusTenghamn - Markus Tenghamn - mtn11005@student.mdh.se - http://MarkusTenghamn.com
 
 jsn11006 - Jonathan - jsn11006@student.mdh.se
 
-thedittozaur - Mattias - N/A - dittostick.wordpress.com
+thedittozaur - Mattias - N/A - http://dittostick.wordpress.com
 
 plr11001 - Patrik - plr11001@student.mdh.se
 

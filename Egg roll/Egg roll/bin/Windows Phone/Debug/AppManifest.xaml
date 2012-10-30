@@ -1,6 +1,5 @@
-<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Egg roll" EntryPointType="Egg_roll.Game1" RuntimeVersion="3.0">
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Egg roll" EntryPointType="Egg_roll.Game1" RuntimeVersion="3.0">
   <Deployment.Parts>
     <AssemblyPart x:Name="Egg roll" Source="Egg roll.dll" />
-    <AssemblyPart x:Name="EggrollGameLib" Source="EggrollGameLib.dll" />
   </Deployment.Parts>
 </Deployment>

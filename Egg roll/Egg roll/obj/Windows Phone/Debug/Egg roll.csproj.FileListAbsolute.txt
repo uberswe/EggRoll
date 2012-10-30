@@ -94,9 +94,32 @@ C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
-C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
-C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
-C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll\EggRoll\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Eggbreak.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\MenuTap.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\collrect.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\tiles.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\TransBlock.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\Font.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\loadingfont.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\menufont.xnb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.dll
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.pdb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.csprojResolveAssemblyReference.cache
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.dll
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\Egg roll.pdb
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Egg roll.xap
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\WMAppManifest.xml
 bin\Windows Phone\Debug\

@@ -2,3 +2,4 @@ D:\Egg_Roll\EggRoll\EggRoll\Egg roll\Egg rollContent\obj\Windows Phone\Debug\Res
 C:\Users\BigMac\Documents\Visual Studio 2010\Projects\EggRoll\Egg roll\Egg rollContent\obj\Windows Phone\Debug\Egg rollContent.contentprojResolveAssemblyReference.cache
 C:\Users\Herr Ditto\Documents\Eggroll\EggRoll\Egg roll\Egg rollContent\obj\Windows Phone\Debug\Egg rollContent.contentprojResolveAssemblyReference.cache
 C:\Users\Alex\Desktop\EggRoll\EggRoll\Egg roll\Egg rollContent\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg rollContent\obj\Windows Phone\Debug\Egg rollContent.contentprojResolveAssemblyReference.cache
