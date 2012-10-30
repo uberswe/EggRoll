@@ -32,11 +32,7 @@ namespace Egg_roll
         Tile[] collisionTilesLeft = new Tile[3];
         Tile[] collisionTilesRight = new Tile[3];
 
-        Tile currentTile;
-
         bool isCollidingLeft, isCollidingRight;
-
-        bool isSlopeUp, isSlope = false;
 
         public Player(List<Character> characters) : base()
         {
@@ -89,35 +85,12 @@ namespace Egg_roll
             if ((collisionTilesDown[0] == null || collisionTilesDown[0].Name == "Coin" || !CollisionRect.Intersects(collisionTilesDown[0].CollisionRect))
                 && (collisionTilesDown[1] == null || collisionTilesDown[1].Name == "Coin" || !CollisionRect.Intersects(collisionTilesDown[1].CollisionRect))
                 && (collisionTilesDown[2] == null || collisionTilesDown[2].Name == "Coin" || !CollisionRect.Intersects(collisionTilesDown[2].CollisionRect)))
-            {
                 onGround = false;
-            }
             else
             {
-                if (collisionTilesDown[0] != null && collisionTilesDown[0].Name == "SlopeUp")
+                if (!onGround)
                 {
-                    if (direction.X < 0)
-                    {
-                        isSlopeUp = false;
-                        //onGround = false;
-                        position.Y = position.Y + (position.X - collisionTilesDown[0].PosX);
-                    }
-                }
-                else if (collisionTilesDown[0] != null && collisionTilesDown[0].Name == "SlopeDown")
-                {
-                    if (direction.X > 0)
-                    {
-                        isSlopeUp = false;
-                        //onGround = false;
-                        position.Y = position.Y + (position.X - collisionTilesDown[0].PosX);
-                    }
-                }
-                else
-                {
-                    if (!onGround)
-                    {
-                        onGround = true;
-                    }
+                    onGround = true;
                 }
             }
 
@@ -145,11 +118,6 @@ namespace Egg_roll
             for (int i = 0; i < collisionTilesRight.Length; i++)
                 if(collisionTilesRight[i] != null)
                     spriteBatch.Draw(spr.Texture, collisionTilesRight[i].Position, Color.White);
-            //Testing
-            if (currentTile != null)
-            {
-                spriteBatch.Draw(spr.Texture, currentTile.Position, Color.White);
-            }
             #endregion
         }
 
@@ -207,16 +175,7 @@ namespace Egg_roll
             }
             else
             {
-                //slope direction
-                if (collisionTilesLeft[0] != null && collisionTilesLeft[0].Name == "SlopeDown")
-                {
-                    isCollidingLeft = false;
-                    isSlopeUp = true;
-                }
-                else
-                {
-                    isCollidingLeft = true;
-                }
+                isCollidingLeft = true;
             }
 
             collisionTilesRight[0] = WorldGen.GetTileAtPosition(matrixPos, new Point(1, 0));
@@ -230,34 +189,8 @@ namespace Egg_roll
             }
             else
             {
-                //slope direction
-                if (collisionTilesRight[0] != null && collisionTilesRight[0].Name == "SlopeUp")
-                {
-                    isCollidingRight = false;
-                    isSlopeUp = true;
-                }
-                else
-                {
-                    isCollidingRight = true;
-                }
+                isCollidingRight = true;
             }
-            //Slope detection
-            currentTile = WorldGen.GetTileAtPosition(matrixPos, new Point(0, 0));
-            if (currentTile != null && currentTile.Name == "SlopeUp" && peekColliosionRect.Intersects(currentTile.CollisionRect))
-            {
-                isSlope = true;
-                onGround = true;
-            }
-            else if (currentTile != null && currentTile.Name == "SlopeDown" && peekColliosionRect.Intersects(currentTile.CollisionRect))
-            {
-                isSlope = true;
-                onGround = true;
-            }
-            else
-            {
-                isSlope = false;
-            }
-
             #endregion
 
             if (dir.X == 0 && onGround && sprite.Rotation != 0)
@@ -271,19 +204,12 @@ namespace Egg_roll
             else
                 direction.X = -tempDir;
 
-            //Slopes
-            if (isSlope && isSlopeUp)
-            {
-                position.Y = position.Y - (position.X - currentTile.PosX);
-            }
-
-
-            sprite.Rotation += direction.X * (speed * 0.00050f);
+            sprite.Rotation += direction.X * (speed * 0.00075f);
             sprite.Rotation = sprite.Rotation % (float)(Math.PI * 2f);
 
             if (btnJump.active)
             {
-                if (onGround && !pressingJump)
+                if (onGround)
                 {
                     onGround = false;
                     gravForce = new Vector2(0, -3f);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{ED7804E7-14E0-4FD6-A0D7-3944B51E32EE}</ProjectGuid>
@@ -60,13 +60,39 @@
     <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Device, Version=2.0.5.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimatedSprite.cs" />
+    <Compile Include="Camera2d.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="MainScene.cs" />
+    <Compile Include="NameObject.cs" />
+    <Compile Include="OnScreenMessages.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Menus\Button.cs" />
+    <Compile Include="Menus\HighScores.cs" />
+    <Compile Include="Menus\LoadingScreen.cs" />
+    <Compile Include="Menus\MainMenu.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\PauseMenu.cs" />
+    <Compile Include="Menus\ScreenManager.cs" />
+    <Compile Include="Menus\SettingsMenu.cs" />
+    <Compile Include="Server\ServerHandler.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="SourceObject.cs" />
+    <Compile Include="Sprite.cs" />
+    <Compile Include="Stuff.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="Weather.cs" />
+    <Compile Include="WorldGen.cs" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\AppManifest.xml">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
@@ -87,10 +113,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\EggrollGameLib\EggrollGameLib.csproj">
-      <Project>{E088A2B3-C4EB-4C37-AF88-6DDC96EF27F2}</Project>
-      <Name>EggrollGameLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Egg rollContent\Egg rollContent.contentproj">
       <Name>Egg_rollContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>

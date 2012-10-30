@@ -12,7 +12,7 @@ namespace Egg_roll
     static class WorldGen
     {
         static int tileSize = 150;
-        static int worldX = 100, worldY = 24;
+        static int worldX = 10, worldY = 24;
         static Tile[,] world = new Tile[worldX, worldY];
         static Tile[,] world2 = new Tile[worldX, worldY];
         static Texture2D spriteSheet;

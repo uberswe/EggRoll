@@ -1,6 +1,12 @@
+Content\Sound\Jump.xnb
 Content\Sprites\pixel.xnb
 Content\Sprites\egg.xnb
 Content\Sprites\SpriteSheet.xnb
-Content\Font.xnb
-Content\menufont.xnb
-Content\loadingfont.xnb
+Content\Sound\Eggbreak.xnb
+Content\Sound\MenuTap.xnb
+Content\Sprites\collrect.xnb
+Content\Sprites\tiles.xnb
+Content\Sprites\TransBlock.xnb
+Content\Fonts\Font.xnb
+Content\Fonts\loadingfont.xnb
+Content\Fonts\menufont.xnb

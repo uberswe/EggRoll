@@ -9,9 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
-using EggRollGameLib;
-using EggRollGameLib.ClassFiles;
-using EggRollGameLib.ClassFiles.Menus;
+using Egg_roll.Menus;
 using Microsoft.Devices.Sensors;
 
 namespace Egg_roll
@@ -41,7 +39,7 @@ namespace Egg_roll
 
         protected override void Initialize()
         {
-            accel = new Accelerometer(); 
+            accel = new Accelerometer();
             accel.Start();
             base.Initialize();
         }
@@ -49,7 +47,8 @@ namespace Egg_roll
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            screenManager = new ScreenManager(this, spriteBatch, graphics);
+            string[] menuItems = { "Start Game", "High Scores", "Settings", "End Game" };
+            screenManager = new ScreenManager(Content, graphics, menuItems);
         }
 
         protected override void UnloadContent()
@@ -72,7 +71,10 @@ namespace Egg_roll
             }
 
             screenManager.Update(gameTime);
-
+            if (!screenManager.GameIsAlive)
+            {
+                this.Exit();
+            }
             base.Update(gameTime);
         }
 
