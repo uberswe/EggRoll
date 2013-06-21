@@ -8,24 +8,35 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Egg_roll.Server;
 
 namespace Egg_roll.Menus
 {
     class HighScores : Menu
     {
+        ServerHandler serverHandler;
 
-        SoundEffect MenuTapFX;
 
-        public HighScores()
+        //Button btnUpdate;
+
+        int dots = 0;
+
+        ScoreTable scores;
+
+        SpriteFont spriteFont2;
+
+        public HighScores(ServerHandler serverHandler)
         {
-            btnBack = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
+            this.serverHandler = serverHandler;
+            btnBack = new Button("Buttons", new Vector2(600, 400), new Rectangle(0, 120 * 6, 250, 120), false, false);
+            //btnUpdate = new Button("Buttons", new Vector2(200, 400), new Rectangle(0, 120 * 9, 250, 120), false, false);
             LoadContent();
         }
 
         //Loads Content
         void LoadContent()
         {
-            MenuTapFX = Stuff.Content.Load<SoundEffect>("Sound\\MenuTap");
+          
         }
 
         public override void Initialize()
@@ -40,6 +51,7 @@ namespace Egg_roll.Menus
 
             Input.Update();
             btnBack.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            //btnUpdate.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             Controls();
 
@@ -49,7 +61,12 @@ namespace Egg_roll.Menus
 
         public override void Draw(GraphicsDevice graphics, SpriteBatch spriteBatch)
         {
+            if (scores == null)
+            {
+                serverHandler.BeginFetchHighScores();
+            }
             spriteFont = Stuff.Content.Load<SpriteFont>("Fonts\\loadingfont");
+            spriteFont2 = Stuff.Content.Load<SpriteFont>("Fonts\\highscores");
             position = new Vector2(100, 30);
             graphics.Clear(Color.Black);
             spriteBatch.Begin();
@@ -58,7 +75,44 @@ namespace Egg_roll.Menus
                 "High Scores",
                 position,
                 fontColor);
+            if (serverHandler.ScoresFetched)
+            {
+                scores = serverHandler.HighScores();
+                int i = 0;
+                foreach (string entry in scores.players)
+                {
+                    spriteBatch.DrawString(
+                                spriteFont2,
+                                entry + " " + scores.scores[i],
+                                new Vector2(100, 100 + i * 25),
+                                fontColor);
+                    i++;
+                }
+            }
+            else
+            {
+                int x = 0;
+                string loading = "Loading";
+                while (x < dots) {
+                    loading += ".";
+                    x++;
+                }
+                spriteBatch.DrawString(
+                    spriteFont,
+                    loading,
+                    new Vector2(400, 100),
+                    fontColor);
+                dots++;
+                if (dots > 5)
+                {
+                    dots = 0;
+                }
+            }
+
+
+
             btnBack.Draw(spriteBatch);
+            //btnUpdate.Draw(spriteBatch);
             spriteBatch.End();
 
         }
@@ -67,9 +121,14 @@ namespace Egg_roll.Menus
         {
             if (btnBack.active)
             {
-                Sound.PlaySoundEffect(MenuTapFX);
+                Sound.PlayMenuTapSound();
                 screenManager.CurrentMenu = -1;
+                scores = null;
             }
+            //if (btnUpdate.active)
+            //{
+            //    screenManager.Server.BeginFetchHighScores();
+            //}
         }
     }
 }

@@ -14,47 +14,53 @@ namespace Egg_roll.Menus
 {
     public class MainMenu : LoadingScreen
     {
-        List<Button> buttons = new List<Button>();
-        string[] menuItems;
+        Sprite logo;
+        MenuEgg menuEgg;
+        List<Button> buttons;
+        //string[] menuItems;
         float width = 0f;
         float height = 0f;
 
-        SoundEffect MenuTapFX;
+       
 
         ScreenManager screenManager;
 
         //Gets info from game and menu items.
-        public MainMenu(SpriteFont spriteFont, string[] menuItems)
+        //public MainMenu(SpriteFont spriteFont, string[] menuItems)
+        public MainMenu(SpriteFont spriteFont)
         {
             this.spriteFont = spriteFont;
-            this.menuItems = menuItems;
+            //this.menuItems = menuItems;
             Input.Initialize();
-            fontColor = Color.Black;
-            MeasureMenu();
+            fontColor = Color.White;
+            //MeasureMenu();
             LoadContent();
+
+            logo = new Sprite("logo");
+            logo.Scale = 0.4f;
+            logo.Position = new Vector2(Stuff.Resolution.X * 0.675f, Stuff.Resolution.Y * 0.3f);
+
+            buttons = new List<Button>();
+
+            //start game
+            Button b = new Button("Buttons", new Vector2(150, 50), new Rectangle(0, 120 * 2, 250, 120), false, false);
+            buttons.Add(b);
+            //high scores
+            b = new Button("Buttons", new Vector2(150, 170), new Rectangle(0, 120 * 4, 250, 120), false, false);
+            buttons.Add(b);
+            //settings
+            b = new Button("Buttons", new Vector2(150, 290), new Rectangle(0, 120 * 5, 250, 120), false, false);
+            buttons.Add(b);
+            //exit game
+            b = new Button("Buttons", new Vector2(150, 410), new Rectangle(0, 120 * 7, 250, 120), false, false);
+            buttons.Add(b);
+            menuEgg = new MenuEgg();
         }
 
         //Loads Content
         void LoadContent()
         {
-            MenuTapFX = Stuff.Content.Load<SoundEffect>("Sound\\MenuTap");
-        }
-
-        //Centers the menu items
-        private void MeasureMenu()
-        {
-            height = 0;
-            width = 0;
-            foreach (string item in menuItems)
-            {
-                Vector2 size = spriteFont.MeasureString(item);
-                if (size.X > width)
-                    width = size.X;
-                height += spriteFont.LineSpacing + 5;
-            }
-            position = new Vector2(
-            width / 2,
-            50);
+         
         }
 
         public override void Initialize()
@@ -64,46 +70,39 @@ namespace Egg_roll.Menus
 
         public void Update(GameTime gameTime, ScreenManager screenManager)
         {
+            float elaps = (float)gameTime.ElapsedGameTime.TotalSeconds;
             this.screenManager = screenManager;
             Input.Update();
-            foreach (Button b in buttons)
+            int c = buttons.Count;
+            for (int i = 0; i < c; i++)
             {
-                b.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                buttons[i].Update(elaps);
             }
             Controls();
+            menuEgg.Update(elaps);
         }
 
         //draws menu items
         public override void Draw(GraphicsDevice graphics, SpriteBatch spriteBatch)
         {
-            graphics.Clear(Color.Black);
-            List<Button> buttonstemp = new List<Button>();
-            spriteBatch.Begin();
-            Vector2 location = position;
-            for (int i = 0; i < menuItems.Length; i++)
-            {
-                Vector2 stringSize = spriteFont.MeasureString(menuItems[i]);
-                int width = Convert.ToInt32(stringSize.X + 200); 
-                int height = Convert.ToInt32(stringSize.Y + 50);
-                Button button = new Button("pixel", location, new Rectangle(0, 0, width, height));
-                buttonstemp.Add(button);
-
-                button.Draw(spriteBatch);
-
-                spriteBatch.DrawString(
-                spriteFont,
-                menuItems[i],
-                location,
-                fontColor);
-                location.Y += spriteFont.LineSpacing + 55;
-            }
+            graphics.Clear(Color.CornflowerBlue); 
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.PointClamp, null, null, null, Camera2d.GetTransformation(graphics));
+            menuEgg.Draw(spriteBatch);
             spriteBatch.End();
-            buttons = buttonstemp;
 
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied);
+            int c = buttons.Count;
+            for (int i = 0; i < c; i++)
+            {
+                buttons[i].Draw(spriteBatch);
+            }
+            logo.Draw(spriteBatch); 
+            spriteBatch.End();
         }
 
         private void Controls()
         {
+            //det här fungerar inte ens? 
             if (Input.KeyDown(Keys.Space) || Input.KeyDown(Keys.Enter))
             {
                 screenManager.CurrentMenu = 0;
@@ -113,7 +112,9 @@ namespace Egg_roll.Menus
             {
                 if (b.active)
                 {
-                    Sound.PlaySoundEffect(MenuTapFX);
+                    Sound.PlayMenuTapSound();
+                    if (i == 0)
+                        Sound.PlayBackgroundSong();
                     screenManager.CurrentMenu = i;
                     break;
                 }

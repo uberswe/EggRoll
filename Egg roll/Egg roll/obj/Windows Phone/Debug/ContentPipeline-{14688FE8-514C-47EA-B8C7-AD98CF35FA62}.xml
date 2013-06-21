@@ -2,39 +2,12 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Sound\Eggbreak.wav</Source>
-      <Name>Sound\Eggbreak</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Eggbreak.xnb</Output>
-      <Time>2012-10-30T17:20:22.3251212+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sound\Jump.wav</Source>
-      <Name>Sound\Jump</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump.xnb</Output>
-      <Time>2012-10-30T17:20:22.3261212+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sound\MenuTap.wav</Source>
-      <Name>Sound\MenuTap</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\MenuTap.xnb</Output>
-      <Time>2012-10-30T17:20:22.3271213+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\pixel.png</Source>
       <Name>Sprites\pixel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pixel.xnb</Output>
       <Time>2012-10-29T16:00:36.8522437+01:00</Time>
     </Item>
     <Item>
@@ -43,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\egg.xnb</Output>
       <Time>2012-10-30T17:25:16.9479726+01:00</Time>
     </Item>
     <Item>
@@ -52,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\SpriteSheet.xnb</Output>
       <Time>2012-10-29T16:00:36.8502436+01:00</Time>
     </Item>
     <Item>
@@ -61,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\collrect.xnb</Output>
-      <Time>2012-10-30T17:20:22.3281213+01:00</Time>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\collrect.xnb</Output>
+      <Time>2012-11-01T14:01:59.8583803+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\tiles.png</Source>
@@ -70,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\tiles.xnb</Output>
-      <Time>2012-10-30T17:20:22.3301214+01:00</Time>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\tiles.xnb</Output>
+      <Time>2013-04-21T01:55:52.5886005+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TransBlock.png</Source>
@@ -79,8 +52,62 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\TransBlock.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\TransBlock.xnb</Output>
       <Time>2012-10-30T17:20:22.3281213+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\buttons.png</Source>
+      <Name>Sprites\buttons</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\buttons.xnb</Output>
+      <Time>2013-04-21T01:55:52.5595988+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\UI buttons.png</Source>
+      <Name>Sprites\UI buttons</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\UI buttons.xnb</Output>
+      <Time>2012-10-31T21:34:56.4155465+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\deadEgg.png</Source>
+      <Name>Sprites\deadEgg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\deadEgg.xnb</Output>
+      <Time>2012-11-02T01:29:29.608759+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\Jump.wav</Source>
+      <Name>Sound\Jump</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump.xnb</Output>
+      <Time>2012-10-30T17:20:22.3261212+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\MenuTap.wav</Source>
+      <Name>Sound\MenuTap</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\MenuTap.xnb</Output>
+      <Time>2013-04-21T01:55:47.8633302+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\eggbreak.wav</Source>
+      <Name>Sound\eggbreak</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\eggbreak.xnb</Output>
+      <Time>2012-11-02T18:59:04.2677034+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Font.spritefont</Source>
@@ -88,7 +115,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\Font.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\Font.xnb</Output>
       <Time>2012-10-30T17:20:22.3211209+01:00</Time>
     </Item>
     <Item>
@@ -97,7 +124,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\loadingfont.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\loadingfont.xnb</Output>
       <Time>2012-10-30T17:20:22.3211209+01:00</Time>
     </Item>
     <Item>
@@ -106,8 +133,297 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\menufont.xnb</Output>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\menufont.xnb</Output>
       <Time>2012-10-30T17:20:22.322121+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\pig.png</Source>
+      <Name>Sprites\pig</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\pig.xnb</Output>
+      <Time>2013-04-21T01:55:52.5785999+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\poop.png</Source>
+      <Name>Sprites\poop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\poop.xnb</Output>
+      <Time>2013-04-21T01:55:52.5735996+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\bird.png</Source>
+      <Name>Sprites\bird</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\bird.xnb</Output>
+      <Time>2013-04-21T01:55:52.5916006+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\eggSheet.png</Source>
+      <Name>Sprites\eggSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\eggSheet.xnb</Output>
+      <Time>2013-04-21T01:55:52.5996011+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\henBody.png</Source>
+      <Name>Sprites\henBody</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\henBody.xnb</Output>
+      <Time>2013-04-21T01:55:52.597601+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\henLeg.png</Source>
+      <Name>Sprites\henLeg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\henLeg.xnb</Output>
+      <Time>2013-04-21T01:55:52.5705994+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\henWing.png</Source>
+      <Name>Sprites\henWing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\henWing.xnb</Output>
+      <Time>2013-04-21T01:55:52.5615989+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\tree1.png</Source>
+      <Name>Sprites\tree1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\tree1.xnb</Output>
+      <Time>2013-04-21T01:55:52.5836002+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\tree2.png</Source>
+      <Name>Sprites\tree2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\tree2.xnb</Output>
+      <Time>2013-04-21T01:55:52.5946008+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\logo.png</Source>
+      <Name>Sprites\logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sprites\logo.xnb</Output>
+      <Time>2013-04-21T01:55:52.5665992+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\jump2.wav</Source>
+      <Name>Sound\jump2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\jump2.xnb</Output>
+      <Time>2013-04-21T01:55:47.5823141+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\coin.wav</Source>
+      <Name>Sound\coin</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\coin.xnb</Output>
+      <Time>2013-04-21T01:55:47.5733136+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig1.wav</Source>
+      <Name>Sound\pig1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig1.xnb</Output>
+      <Time>2013-04-21T01:55:47.720322+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig2.wav</Source>
+      <Name>Sound\pig2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig2.xnb</Output>
+      <Time>2013-04-21T01:55:47.7283225+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig3.wav</Source>
+      <Name>Sound\pig3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig3.xnb</Output>
+      <Time>2013-04-21T01:55:47.737323+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig4.wav</Source>
+      <Name>Sound\pig4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig4.xnb</Output>
+      <Time>2013-04-21T01:55:47.7403232+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig5.wav</Source>
+      <Name>Sound\pig5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig5.xnb</Output>
+      <Time>2013-04-21T01:55:47.7433233+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig6.wav</Source>
+      <Name>Sound\pig6</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig6.xnb</Output>
+      <Time>2013-04-21T01:55:47.7513238+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig7.wav</Source>
+      <Name>Sound\pig7</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig7.xnb</Output>
+      <Time>2013-04-21T01:55:47.7573241+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\pig8.wav</Source>
+      <Name>Sound\pig8</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\pig8.xnb</Output>
+      <Time>2013-04-21T01:55:47.7603243+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\hay.wav</Source>
+      <Name>Sound\hay</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\hay.xnb</Output>
+      <Time>2013-04-21T01:55:47.8673304+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\poop1.wav</Source>
+      <Name>Sound\poop1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\poop1.xnb</Output>
+      <Time>2013-04-21T01:55:47.5853143+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\poop2.wav</Source>
+      <Name>Sound\poop2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\poop2.xnb</Output>
+      <Time>2013-04-21T01:55:47.6863201+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\poop3.wav</Source>
+      <Name>Sound\poop3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\poop3.xnb</Output>
+      <Time>2013-04-21T01:55:47.6933205+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\poop4.wav</Source>
+      <Name>Sound\poop4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\poop4.xnb</Output>
+      <Time>2013-04-21T01:55:47.7253223+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\poop5.wav</Source>
+      <Name>Sound\poop5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\poop5.xnb</Output>
+      <Time>2013-04-21T01:55:47.7343228+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\Jump1.wav</Source>
+      <Name>Sound\Jump1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump1.xnb</Output>
+      <Time>2013-04-21T01:55:47.5763138+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\Jump3.wav</Source>
+      <Name>Sound\Jump3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump3.xnb</Output>
+      <Time>2013-04-21T01:55:47.6833199+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\Jump4.wav</Source>
+      <Name>Sound\Jump4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump4.xnb</Output>
+      <Time>2013-04-21T01:55:47.6893203+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\Jump5.wav</Source>
+      <Name>Sound\Jump5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\Jump5.xnb</Output>
+      <Time>2013-04-21T01:55:47.7173219+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\highscores.spritefont</Source>
+      <Name>Fonts\highscores</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Fonts\highscores.xnb</Output>
+      <Time>2013-04-21T01:55:47.9033325+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\backgroundsong.mp3</Source>
+      <Name>Sound\backgroundsong</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\backgroundsong.xnb</Output>
+      <Extra>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\Sound\backgroundsong.wma</Extra>
+      <Time>2013-04-21T01:55:47.7813255+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -116,10 +432,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg rollContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll SVN\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg rollContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\MarkusWin\Documents\Visual Studio 2010\Projects\Egg Roll Backup\Egg roll\Egg roll\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

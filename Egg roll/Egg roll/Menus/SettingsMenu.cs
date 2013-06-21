@@ -13,19 +13,32 @@ namespace Egg_roll.Menus
 {
     class SettingsMenu : Menu
     {
+        Button btnChangeWeather, btnChangePlayer;
 
-        SoundEffect MenuTapFX;
+        StorageManager sm = new StorageManager();
 
-        public SettingsMenu()
+        SpriteFont spriteFont2;
+
+
+
+        Weather weather;
+
+        ScreenManager screenManager;
+
+        public SettingsMenu(Weather weather, ScreenManager screenManager)
         {
-            btnBack = new Button("pixel", new Vector2(710, 420), new Rectangle(0, 0, 150, 100));
+            this.weather = weather;
+            this.screenManager = screenManager;
+            btnBack = new Button("Buttons", new Vector2(600, 400), new Rectangle(0, 120 * 6, 250, 120), false, false);
+            btnChangeWeather = new Button("Buttons", new Vector2(200, 200), new Rectangle(250, 120 * 1, 250, 120), false, false);
+            btnChangePlayer = new Button("Buttons", new Vector2(200, 400), new Rectangle(250, 120 * 0, 250, 120), false, false);
             LoadContent();
         }
 
         //Loads Content
         void LoadContent()
         {
-            MenuTapFX = Stuff.Content.Load<SoundEffect>("Sound\\MenuTap");
+            
         }
 
         public void Update(GameTime gameTime, ScreenManager screenManager)
@@ -33,6 +46,8 @@ namespace Egg_roll.Menus
             this.screenManager = screenManager;
             Input.Update();
             btnBack.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            btnChangeWeather.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            btnChangePlayer.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             Controls();
         }
@@ -40,6 +55,7 @@ namespace Egg_roll.Menus
         public override void Draw(GraphicsDevice graphics, SpriteBatch spriteBatch)
         {
             spriteFont = Stuff.Content.Load<SpriteFont>("Fonts\\loadingfont");
+            spriteFont2 = Stuff.Content.Load<SpriteFont>("Fonts\\highscores");
             position = new Vector2(100, 30);
             graphics.Clear(Color.Black);
             spriteBatch.Begin();
@@ -48,16 +64,59 @@ namespace Egg_roll.Menus
                 "Settings",
                 position,
                 fontColor);
+            spriteBatch.DrawString(
+                spriteFont2,
+                "Current weather: " + weather.WeatherForecast.ToString(),
+                new Vector2(100,100),
+                fontColor);
+            if (sm.LoadObj("PlayerName") != null)
+            {
+                spriteBatch.DrawString(
+                    spriteFont2,
+                    "PlayerName: " + sm.LoadObj("PlayerName"),
+                    new Vector2(100, 300),
+                    fontColor);
+            }
+            else
+            {
+                spriteBatch.DrawString(
+                    spriteFont2,
+                    "PlayerName: ",
+                    new Vector2(100, 300),
+                    fontColor);
+            }
             btnBack.Draw(spriteBatch);
+            btnChangeWeather.Draw(spriteBatch);
+            btnChangePlayer.Draw(spriteBatch);
             spriteBatch.End();
         }
         private void Controls()
         {
             if (btnBack.active)
             {
-                Sound.PlaySoundEffect(MenuTapFX);
+                Sound.PlayMenuTapSound();
                 screenManager.CurrentMenu = -1;
             }
+            if (btnChangePlayer.active)
+            {
+                if (sm.LoadObj("PlayerName") != null)
+                {
+                    Guide.BeginShowKeyboardInput(Microsoft.Xna.Framework.PlayerIndex.One, "Player Name", "Please enter a name to use to identify your score.", sm.LoadObj("PlayerName").ToString(), new AsyncCallback(GetPlayerName), null);
+                }
+                else {
+                    Guide.BeginShowKeyboardInput(Microsoft.Xna.Framework.PlayerIndex.One, "Player Name", "Please enter a name to use to identify your score.", "", new AsyncCallback(GetPlayerName), null);
+                }
+            }
+            if (btnChangeWeather.active)
+            {
+                screenManager.CurrentMenu = 6;
+            }
+        }
+
+        void GetPlayerName(IAsyncResult res)
+        {
+            string playerName = Guide.EndShowKeyboardInput(res);
+            sm.SaveObj(playerName, "PlayerName");
         }
     }
 }

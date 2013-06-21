@@ -1,0 +1,108 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Input.Touch;
+
+namespace Egg_roll.Menus
+{
+    public class MainMenu : LoadingScreen
+    {
+        List<Button> buttons;
+        //string[] menuItems;
+        float width = 0f;
+        float height = 0f;
+
+        SoundEffect MenuTapFX;
+
+        ScreenManager screenManager;
+
+        //Gets info from game and menu items.
+        //public MainMenu(SpriteFont spriteFont, string[] menuItems)
+        public MainMenu(SpriteFont spriteFont)
+        {
+            this.spriteFont = spriteFont;
+            //this.menuItems = menuItems;
+            Input.Initialize();
+            fontColor = Color.White;
+            //MeasureMenu();
+            LoadContent();
+            buttons = new List<Button>();
+
+            //start game
+            Button b = new Button("Buttons", new Vector2(150, 80), new Rectangle(0, 120 * 2, 250, 120), false, false);
+            buttons.Add(b);
+            //high scores
+            b = new Button("Buttons", new Vector2(150, 200), new Rectangle(0, 120 * 4, 250, 120), false, false);
+            buttons.Add(b);
+            //settings
+            b = new Button("Buttons", new Vector2(150, 320), new Rectangle(0, 120 * 5, 250, 120), false, false);
+            buttons.Add(b);
+            //exit game
+            b = new Button("Buttons", new Vector2(150, 440), new Rectangle(0, 120 * 7, 250, 120), false, false);
+            buttons.Add(b);
+        }
+
+        //Loads Content
+        void LoadContent()
+        {
+            MenuTapFX = Stuff.Content.Load<SoundEffect>("Sound\\MenuTap");
+        }
+
+        public override void Initialize()
+        {
+
+        }
+
+        public void Update(GameTime gameTime, ScreenManager screenManager)
+        {
+            this.screenManager = screenManager;
+            Input.Update();
+            int c = buttons.Count;
+            for (int i = 0; i < c; i++)
+            {
+                buttons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+            Controls();
+        }
+
+        //draws menu items
+        public override void Draw(GraphicsDevice graphics, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied);
+            int c = buttons.Count;
+            for (int i = 0; i < c; i++)
+            {
+                buttons[i].Draw(spriteBatch);
+            }
+            spriteBatch.End();
+        }
+
+        private void Controls()
+        {
+            //det här fungerar inte ens? 
+            if (Input.KeyDown(Keys.Space) || Input.KeyDown(Keys.Enter))
+            {
+                screenManager.CurrentMenu = 0;
+            }
+            int i = 0;
+            foreach (Button b in buttons)
+            {
+                if (b.active)
+                {
+                    Sound.PlaySoundEffect(MenuTapFX);
+                    screenManager.CurrentMenu = i;
+                    break;
+                }
+                i++;
+            }
+
+        }
+    }
+}

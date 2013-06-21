@@ -1,0 +1,314 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
+
+using Microsoft.Xna.Framework.Audio;
+using Egg_roll.Menus;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Egg_roll
+{
+    class Player : Character
+    {
+        SoundEffect Jump;
+        SoundEffect DamageTaken;
+
+        SoundEffect JumpFX;
+        SoundEffect EggBreakFX;
+        Button btnRight, btnLeft, btnJump, btnPause, btnDebug;
+        float ay;
+        ScreenManager screenManager;
+        Rectangle CollisionRect;
+
+        bool pressingJump = false;
+
+        bool adjustPlayer = false;
+
+        Sprite spr;
+
+        Sprite pPos;
+
+        Tile[] collisionTilesDown = new Tile[3];
+        Tile[] collisionTilesLeft = new Tile[3];
+        Tile[] collisionTilesRight = new Tile[3];
+        Tile[] collisionTilesTop = new Tile[3];
+
+        Tile currentTile;
+
+        bool isCollidingLeft, isCollidingRight, isCollidingDown = false;
+
+        bool isSlopeUp, isSlope = false;
+
+        public Player(List<Character> characters)
+            : base()
+        {
+            this.characters = characters;
+            sprite = new Sprite("egg");
+            sprite.Scale = 0.5f;
+            sprite.iColor.SetColor(Color.White);
+            speed = 300;
+            position = new Vector2(100, 1000);
+            
+            spr = new Sprite("collrect");
+            pPos = new Sprite("transBlock");
+
+            btnRight = new Button("UI buttons", new Vector2(250, 420), new Rectangle(0, 300, 150, 150), true);
+            btnLeft = new Button("UI buttons", new Vector2(90, 420), new Rectangle(0, 150, 150, 150), true);
+            btnJump = new Button("UI buttons", new Vector2(710, 420), new Rectangle(0, 0, 150, 150), true);
+            btnDebug = new Button("UI buttons", new Vector2(510, 420), new Rectangle(0, 0, 150, 150), true);
+            btnDebug.sprite.Rotation = 1f;
+            btnPause = new Button("UI buttons", new Vector2(710, 50), new Rectangle(0, 450, 150, 150), true);
+
+            weight = 9f;
+
+            LoadContent();
+        }
+
+        public override void LoadContent()
+        {
+            base.LoadContent();
+            JumpFX = Stuff.Content.Load<SoundEffect>("Sound\\Jump");
+            EggBreakFX = Stuff.Content.Load<SoundEffect>("Sound\\EggBreak");
+        }
+
+        public void Update(float elaps, float yaccel, ScreenManager screenManager)
+        {
+            if (!adjustPlayer)
+            {
+                position.Y = WorldGen.StartPos().Y - 75;
+                adjustPlayer = true;
+            }
+            CollisionRect = new Rectangle(
+                (int)position.X - (int)(sprite.Origin.X * sprite.Scale),
+                (int)position.Y - (int)(sprite.Origin.Y * sprite.Scale),
+                (int)(sprite.Texture.Width * sprite.Scale),
+                (int)(sprite.Texture.Height * sprite.Scale));
+
+            this.screenManager = screenManager;
+            btnRight.Update(elaps);
+            btnLeft.Update(elaps);
+            btnJump.Update(elaps);
+            btnPause.Update(elaps);
+            btnDebug.Update(elaps); 
+
+            Point matrixPos = WorldGen.GetMatrixPos(new Vector2(position.X, position.Y));
+
+            Controls(matrixPos, elaps);
+
+            ay = yaccel;
+
+            base.Update(elaps);
+
+            if (life == 0) 
+            {
+                screenManager.CurrentMenu = 5;
+                life = 1;
+                screenManager.ResetGame();
+            }
+
+            Camera2d.Position = position + (Stuff.AngleToVector(sprite.Rotation + (float)Math.PI) * 20);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            base.Draw(spriteBatch);
+
+            #region DrawCollisionRects
+            for (int i = 0; i < collisionTilesDown.Length; i++)
+                if (collisionTilesDown[i] != null)
+                    spriteBatch.Draw(spr.Texture, collisionTilesDown[i].Position + new Vector2(25, 25), Color.White);
+
+            for (int i = 0; i < collisionTilesLeft.Length; i++)
+                if (collisionTilesLeft[i] != null)
+                    spriteBatch.Draw(spr.Texture, collisionTilesLeft[i].Position + new Vector2(25, 25), Color.White);
+
+            for (int i = 0; i < collisionTilesRight.Length; i++)
+                if (collisionTilesRight[i] != null)
+                    spriteBatch.Draw(spr.Texture, collisionTilesRight[i].Position + new Vector2(25, 25), Color.White);
+            #endregion
+        }
+
+        public void DrawUI(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin(); 
+            btnJump.Draw(spriteBatch);
+            btnRight.Draw(spriteBatch);
+            btnLeft.Draw(spriteBatch);
+            btnPause.Draw(spriteBatch);
+
+            btnDebug.Draw(spriteBatch);
+            spriteBatch.End(); 
+        }
+
+        private void Controls(Point matrixPos, float elaps)
+        {
+            Vector2 dir = Vector2.Zero;
+
+            if (btnDebug.active)
+            {
+                dir.X += 2f;
+            }
+
+            if (btnLeft.active)
+            {
+                dir.X -= 2f;
+            }
+            if (btnRight.active)
+            {
+                dir.X += 2f;
+            }
+
+            if (btnPause.active)
+            {
+                screenManager.CurrentMenu = 4;
+            }
+
+            if (ay > 0.15 || ay < -0.15)
+            {
+                if (ay >= 0.60)
+                {
+                    ay = (float)0.60;
+                }
+                if (ay <= -0.60)
+                {
+                    ay = (float)-0.60;
+                }
+                dir.X -= ay * 3;
+            }
+
+            #region Collision
+
+            //CollisionTiles
+            collisionTilesDown[0] = WorldGen.GetTileAtPosition(matrixPos, new Point(0, 1));
+            collisionTilesDown[1] = WorldGen.GetTileAtPosition(matrixPos, new Point(1, 1));
+            collisionTilesDown[2] = WorldGen.GetTileAtPosition(matrixPos, new Point(-1, 1));
+
+            Rectangle bottomCollisionRect = CollisionRect;
+            bottomCollisionRect.Y += (int)Math.Round(gravForce.Y * weight);
+            Rectangle aboveCollisionRect = CollisionRect;
+            aboveCollisionRect.Y -= 5;
+
+            //Collision Bottom
+            for (int j = 0; j < collisionTilesDown.Length; j++)
+            {
+                if (collisionTilesDown[j] != null && collisionTilesDown[j].Name != "Coin" && bottomCollisionRect.Intersects(collisionTilesDown[j].CollisionRect))
+                {
+                    for (int i = 0; (int)Math.Round(gravForce.Y * weight) > i; i++)
+                    {
+                        if (!(new Rectangle((int)position.X, (int)position.Y + i, CollisionRect.Width, CollisionRect.Height).Intersects(collisionTilesDown[j].CollisionRect)))
+                        {
+                            position.Y += 1;
+                        }
+                    }
+                    while (collisionTilesDown[j].CollisionRect.Contains(new Point((int)position.X, (int)position.Y + (int)Math.Round((sprite.Texture.Height / 2) * sprite.Scale) - 3)) && onGround)
+                    {
+                        position.Y--; ;
+                        aboveCollisionRect.Y--;
+                    }
+                    if((gravForce.Y * weight) >= 0)
+                        onGround = true;
+                }
+            }
+
+            Rectangle peekColliosionRect = new Rectangle(CollisionRect.X + (int)Math.Round(dir.X * elaps * speed), CollisionRect.Y, CollisionRect.Width, CollisionRect.Height);
+
+            //CollisionRects
+            collisionTilesLeft[0] = WorldGen.GetTileAtPosition(matrixPos, new Point(-1, 0));
+            collisionTilesLeft[1] = WorldGen.GetTileAtPosition(matrixPos, new Point(-1, 1));
+            collisionTilesLeft[2] = WorldGen.GetTileAtPosition(matrixPos, new Point(-1, -1));
+            for (int i = 0; i < collisionTilesLeft.Length; i++)
+            {
+                if (collisionTilesLeft[i] == null || collisionTilesLeft[i].Name == "Coin" || collisionTilesLeft[i].Name == "Platform" || !peekColliosionRect.Intersects(collisionTilesLeft[i].CollisionRect))
+                {
+                    isCollidingLeft = false;
+                }
+                else
+                {
+                    if (!onGround)
+                        isCollidingLeft = true;
+                    else if (i == 0)
+                        isCollidingLeft = true;
+                    break;
+                }
+            }
+            collisionTilesRight[0] = WorldGen.GetTileAtPosition(matrixPos, new Point(1, 0));
+            collisionTilesRight[1] = WorldGen.GetTileAtPosition(matrixPos, new Point(1, 1));
+            collisionTilesRight[2] = WorldGen.GetTileAtPosition(matrixPos, new Point(1, -1));
+
+            for (int i = 0; i < collisionTilesRight.Length; i++)
+            {
+                if (collisionTilesRight[i] == null || collisionTilesRight[i].Name == "Coin" || collisionTilesRight[i].Name == "Platform" || !peekColliosionRect.Intersects(collisionTilesRight[i].CollisionRect))
+                {
+                    isCollidingRight = false;
+                }
+                else
+                {
+                    if (!onGround)
+                        isCollidingRight = true;
+                    else if (i == 0)
+                        isCollidingRight = true;
+                    break;
+                }
+            
+            }
+
+            
+
+            #endregion
+
+            if (dir.X == 0 && onGround && sprite.Rotation != 0)
+                dir.X = Stuff.AngleToVector(sprite.Rotation).X;
+
+            float tempDir = Stuff.Lerp(direction.X, dir.X, 0.1f);
+
+            if ((!isCollidingLeft && tempDir < 0) || (!isCollidingRight && tempDir > 0))
+            {
+                direction.X = tempDir;
+            }
+            else
+                direction.X = -tempDir;
+
+            //DYING
+            if ((isCollidingLeft && dir.X < -2.0f) || (isCollidingRight && dir.X > 2.0f) || (isCollidingDown && gravForce.Y > 10.0f && onGround) || (position.Y > 4000 && !onGround))
+            {
+                //gravforce 5 is 3 tiles
+                Sound.PlaySoundEffect(EggBreakFX);
+                life = 0;
+                adjustPlayer = false;
+            }
+
+
+            sprite.Rotation += direction.X * (speed * 0.00050f);
+            sprite.Rotation = sprite.Rotation % (float)(Math.PI * 2f);
+
+            if (btnJump.active || btnDebug.active)
+            {
+                if (onGround && !pressingJump)
+                {
+                    onGround = false;
+                    gravForce = new Vector2(0, -4f);
+                    Sound.PlaySoundEffect(JumpFX);
+                }
+                else if (gravForce.Y >= -4f && pressingJump == true && gravForce.Y < 0f)
+                {
+                    gravForce.Y = gravForce.Y - 0.2f;
+                }
+                pressingJump = true;
+            }
+            else
+            {
+                pressingJump = false;
+            }
+        }
+
+
+        private Rectangle BottomCollisionRect
+        {
+            get { return new Rectangle(CollisionRect.X, CollisionRect.Y + (int)(sprite.Texture.Height * sprite.Scale) - 10, (int)(sprite.Texture.Width * sprite.Scale), 10); }
+        }
+    }
+}

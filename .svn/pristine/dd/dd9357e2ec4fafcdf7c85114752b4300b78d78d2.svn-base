@@ -1,0 +1,313 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input.Touch;
+
+namespace Egg_roll
+{
+    static class WorldGen
+    {
+        static int tileSize = 200;
+        static int worldX = 20, worldY = 24, update = (worldX / 4) * 3, methodCalls = 0, barnChunks = 0;
+        static bool barn = false;
+        static Tile[,] world = new Tile[worldX, worldY];
+        static Texture2D spriteSheet, tileSpriteSheet;
+        static Random rand = new Random();
+        static Rectangle drawRect;
+
+        static public void Initialize(ContentManager Content)
+        {
+            spriteSheet = Content.Load<Texture2D>("Sprites\\SpriteSheet");
+            tileSpriteSheet = Content.Load<Texture2D>("Sprites\\tiles");
+        }
+
+        static public void Update(Rectangle drawRectangle, Vector2 playerPos)
+        {
+            drawRect = drawRectangle;
+            if (methodCalls == 0)
+            {
+                RandomLevel(methodCalls);
+                methodCalls++;
+            }
+            if (playerPos.X > world[update, GetYPos(update, false)].PosX)
+            {
+                RandomLevel(methodCalls);
+                methodCalls++;
+            }
+        }
+
+        public static void ResetWorld()
+        {
+            Clear(0, worldX);
+            methodCalls = 0;
+        }
+
+        #region CreateRandomLevel
+
+        static void RandomLevel(int methodCalls)
+        {
+            int LowX, ypos;
+            Rectangle block, platform, slopeUp, slopeDown;
+
+            if (!barn && methodCalls % 8 == 3)
+            {
+                barn = true;
+                barnChunks = 2;
+            }
+
+            if (barn)
+            {
+                block = new Rectangle(250 * 1, 250 * 0, 250, 250);
+                platform = new Rectangle(250 * 1, 250 * 3, 250, 250);
+                slopeUp = new Rectangle(250 * 1, 250 * 2, 250, 250);
+                slopeDown = new Rectangle(250 * 1, 250 * 1, 250, 250);
+
+                barnChunks--;
+                if (barnChunks == 0)
+                    barn = false;
+            }
+            else
+            {
+                block = new Rectangle(250 * 0, 250 * 0, 250, 250);
+                platform = new Rectangle(250 * 0, 250 * 3, 250, 250);
+                slopeUp = new Rectangle(250 * 0, 250 * 2, 250, 250);
+                slopeDown = new Rectangle(250 * 0, 250 * 1, 250, 250);
+            }
+
+            if (methodCalls == 0)
+            {
+                LowX = 0;
+                ypos = rand.Next(worldY / 2 - 2, worldY / 2 + 2);
+            }
+            else
+            {
+                LowX = worldX / 2;
+                for (int y = 0; y < worldY; y++)
+                {
+                    for (int x = 0; x < LowX; x++)
+                    {
+                        world[x, y] = world[x + LowX, y];
+                        world[x + LowX, y] = null;
+                    }
+                }
+                ypos = GetYPos(LowX - 1, false);
+            }
+
+            methodCalls *= (worldX / 2);
+
+            bool canCreateHole = false;
+            int holeInt = 0, holeWait = 3, softblock = 0, coinCount = rand.Next(4);
+            string name = "Block";
+            for (int x = LowX; x < worldX; x++)
+            {
+                if ((canCreateHole == true && holeInt == rand.Next(2, 4)) || holeInt == 3)
+                {
+                    canCreateHole = false;
+                    holeInt = 0;
+                    holeWait = 3;
+                }
+
+                if (holeWait == 0 && x % rand.Next(5, 8) == 0)
+                    canCreateHole = true;
+
+                if (!barn)
+                {
+                    if (x % rand.Next(2, 4) == 0)
+                        ypos = SetY(ypos);
+                }
+                else
+                {
+                    if (x % rand.Next(4, 6) == 0)
+                        ypos = SetY(ypos);
+                }
+
+                if (!canCreateHole)
+                {
+                    if (x > 0 && HighDrop(x, ypos))
+                    {
+                        name = "SoftBlock";
+                        softblock = 2;
+                    }
+
+                    for (int y = ypos; y < worldY; y++)
+                    {
+                        world[x, y] = new Tile(tileSpriteSheet, block, new Vector2((x + methodCalls) * tileSize, y * tileSize), Color.White, name);
+                    }
+                    //if (name == "SoftBlock")
+                    //    world[x, ypos] = new Tile(tileSpriteSheet, new Rectangle(250 * 0, 250 * 0, 250, 250), new Vector2((x + methodCalls) * tileSize, ypos * tileSize), Color.White, name);
+
+                    if (softblock < 1)
+                        name = "Block";
+                    holeWait--;
+                    if (holeWait < 0)
+                        holeWait = 0;
+                    softblock--;
+                }
+                else
+                    holeInt++;
+
+                if (world[x, ypos] == null)
+                {
+                    Platform(1, x, GetYPos(x - 1, true), methodCalls, platform);
+                }
+            }
+
+            CalculateTerrain(LowX, slopeUp, slopeDown);
+
+            //AddCoins(rand.Next(1,6), LowX, methodCalls);
+        }
+
+        static void AddCoins(int coinCount, int low, int methodCalls)
+        {
+            while (coinCount > 0)
+            {
+                int x = rand.Next(low, worldX);
+                int y = GetYPos(x, false);
+                y--;
+                if (world[x, y] == null)
+                {
+                    world[x, y] = new Tile(spriteSheet, new Rectangle(150 * 11, 150 * 8, 150, 150), new Vector2((x + methodCalls) * tileSize, y * tileSize), Color.White, "Coin");
+                    coinCount--;
+                }
+            }
+        }
+
+        static bool HighDrop(int x, int y)
+        {
+            if (y - GetYPos(x - 1, false) > 2)
+                return true;
+            return false;
+
+        }
+
+        public static Vector2 StartPos()
+        {
+            return world[0, GetYPos(0, false)].Position;
+        }
+
+        static int GetYPos(int x, bool platformCall)
+        {
+            for (int y = 0; y < worldY; y++)
+            {
+                if (world[x, y] != null && world[x, y].Name != "Coin")
+                {
+                    if (world[x, y].Name == "Platform" || !platformCall)
+                        return y;
+                    else
+                        return y - 2;
+                }
+            }
+            return 0;
+        }
+
+
+        static void Platform(int length, int xpos, int ypos, int methodCalls, Rectangle platform)
+        {
+            for (int x = xpos; x < xpos + length; x++)
+            {
+                if (x < worldX && x > 0 && ypos < worldY && ypos > 0)
+                    world[x, ypos] = new Tile(tileSpriteSheet, platform, new Vector2((x + methodCalls) * tileSize, ypos * tileSize), Color.White, "Platform");
+            }
+        }
+
+        static void CalculateTerrain(int low, Rectangle slopeUp, Rectangle slopeDown)
+        {
+            if (low == 0)
+                low = 2;
+            for (int x = low - 1; x < worldX - 1; x++)
+            {
+                int y;
+                Tile last = world[x - 1, GetYPos(x - 1, false)];
+                Tile present = world[x, y = GetYPos(x, false)];
+                Tile next = world[x + 1, GetYPos(x + 1, false)];
+                string name = "";
+
+                if (present.Name != "Platform")
+                {
+                    name = world[x, y].Name;
+                    if ((last.PosY == present.PosY || last.Name == name + "SlopeDown") && next.PosY > present.PosY)
+                    {
+                        world[x, y] = new Tile(tileSpriteSheet, slopeDown, present.Position, Color.White, "SlopeDown");
+                    }
+                    else if ((next.PosY == present.PosY || next.Name == name + "SlopeUp") && last.PosY > present.PosY)
+                    {
+                        world[x, y] = new Tile(tileSpriteSheet, slopeUp, present.Position, Color.White, "SlopeUp");
+                    }
+
+                    //if (present.Name == "Block" && last.PosY > present.PosY && next.PosY > present.PosY)
+                    //{
+                    //    world[x, y].Name = "Loser";
+                    //}
+                }
+            }
+        }
+
+        static bool BlockAtPosXNull(int x)
+        {
+            for (int y = 0; y < 24; y++)
+            {
+                if (world[x, y] != null)
+                    return false;
+            }
+            return true;
+        }
+
+        static int SetY(int y)
+        {
+            y = rand.Next(y - 1, y + 2);
+            if (y < 7)
+                y = 7;
+            else if (y > worldY - 4)
+                y = worldY - 4;
+            return y;
+        }
+
+        static void Clear(int lowX, int highX)
+        {
+            for (int y = 0; y < worldY; y++)
+            {
+                for (int x = lowX; x < highX; x++)
+                {
+                    if (world[x, y] != null)
+                        world[x, y] = null;
+                }
+            }
+        }
+
+        #endregion
+
+        static public Point GetMatrixPos(Vector2 point)
+        {
+            return new Point((int)point.X / tileSize, (int)point.Y / tileSize);
+        }
+
+        static public Tile GetTileAtPosition(Point pos, Point dir)
+        {
+            int pointX = pos.X + dir.X;
+            int pointY = pos.Y + dir.Y;
+            if (pointX >= 0 && pointY >= 0 && pointY < worldY)
+                if (methodCalls <= 1)
+                    return world[pointX, pointY];
+                else
+                    return world[(pointX + (worldX / 2) * (methodCalls - 1)) % worldX, pointY];
+            return null;
+        }
+
+
+        static public void Draw(SpriteBatch spriteBatch)
+        {
+            for (int y = 0; y < worldY; y++)
+            {
+                for (int x = 0; x < worldX; x++)
+                {
+                    if (world[x, y] != null && drawRect.Contains((int)world[x, y].Position.X, (int)world[x, y].Position.Y))
+                        world[x, y].Draw(spriteBatch);
+                }
+            }
+        }
+    }
+}

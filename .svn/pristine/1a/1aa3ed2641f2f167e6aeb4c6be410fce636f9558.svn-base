@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
+
+namespace Egg_roll
+{
+  static  class Sound
+    {
+      static  Song MenuSong;
+
+        public static void LoadContent()
+        {
+            ContentManager Content = Stuff.Content;
+            MenuSong = Content.Load<Song>("");
+        }
+
+        public static void PlaySoundEffect(SoundEffect eff)
+        {
+            eff.Play();
+        }
+        private static void PlaySong(Song song)
+        {
+            MediaPlayer.Play(song);
+        }
+        public static void PlayMenuSong()
+        {
+            PlaySong(MenuSong);
+        }
+    }
+}

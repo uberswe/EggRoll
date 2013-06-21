@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input.Touch;
+
+namespace Egg_roll.Menus
+{
+    class Button
+    {
+        public Vector2 position;
+        public Sprite sprite;
+        float scale;
+        public bool active, isSwitchButton;
+        bool shrinkOnPush;
+        public Rectangle hitbox
+        {
+            get
+            {
+                //return new Rectangle((int)position.X , (int)position.Y , sprite.Source.Width, sprite.Source.Height);
+                return new Rectangle((int)position.X - (sprite.Source.Width / 2), (int)position.Y - (sprite.Source.Height / 2), sprite.Source.Width, sprite.Source.Height);
+            }
+        }
+        /// <summary>
+        /// creates a button. bool "active" is true when clicked. 
+        /// </summary>
+        /// <param name="assetName">name of sprite to use</param>
+        /// <param name="position">where button is placed</param>
+        /// <param name="size">source of the sprite.</param>
+        /// <param name="resizeOnTap">if true, button shrinks a bit when pushed.</param>
+        public Button(string assetName, Vector2 position, Rectangle size, bool shrinkOnPush)
+        {
+            sprite = new Sprite(assetName);
+            sprite.Source = size;
+            this.position = position;
+            scale = 1f;
+            isSwitchButton = false;
+            this.shrinkOnPush = shrinkOnPush;
+        }
+
+        public bool Update(float elaps)
+        {
+            if (isSwitchButton == false)
+                active = false;
+            sprite.Scale = Stuff.Lerp(sprite.Scale, scale, 0.1f);
+
+            if (active)
+                sprite.iColor.SetColor(Stuff.BlendColors(sprite.iColor, Color.Green, 90));
+            else
+                sprite.iColor.SetColor(Stuff.BlendColors(sprite.iColor, Color.Red, 90));
+
+            bool buttonHit = false;
+            foreach (TouchLocation tc in Input.tc)
+                if (tc.State == TouchLocationState.Moved || tc.State == TouchLocationState.Pressed)
+                    if (hitbox.Intersects(new Rectangle((int)tc.Position.X, (int)tc.Position.Y, 1, 1)))
+                        buttonHit = true;
+
+            if (buttonHit)
+            {
+                this.active = !this.active;
+                if (shrinkOnPush)
+                    sprite.Scale = this.scale / 1.2f;
+                return true;
+            }
+
+            return false;
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            sprite.DrawAt(spriteBatch, position);
+        }
+    }
+}

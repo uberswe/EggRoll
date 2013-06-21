@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+
+namespace Egg_roll
+{
+    class Tile : SourceObject
+    {
+        Color color;
+
+        public Tile(Texture2D texture, Rectangle source, Vector2 position, Color color, string name)
+            :base(texture, position, name, source)
+        {
+            this.color = color;
+        }
+
+        public Color TileColor
+        {
+            get { return color; }
+            set { color = value; }
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(texture, Position, Source, color, 0, Vector2.Zero, 1f, SpriteEffects.None, 0);
+        }
+
+        //for slopes
+
+        public Vector2 GetUpSlopeStart()
+        {
+            return new Vector2(PosX, PosY + source.Height);
+        }
+
+        public Vector2 GetUpSlopeEnd()
+        {
+            return new Vector2(PosX + source.Width, PosY);
+        }
+
+        public Vector2 GetDownSlopeStart()
+        {
+            return new Vector2(PosX + source.Width, PosY);
+        }
+
+        public Vector2 GetDownSlopeEnd()
+        {
+            return new Vector2(PosX, PosY + source.Height);
+        }
+    }
+}
