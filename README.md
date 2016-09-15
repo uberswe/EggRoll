@@ -2,7 +2,7 @@ Description
 
 This game is a 2D tile based sidescroller with slopes developed for the Windows Phone 7.0 with XNA. Both the touchscreen and accelerometer can be used to controll the player. The player starts out as an egg whom has to get as far as possible through the endless level of the game. The game uses an algorithim to constantly generate and update the level as the player walks through it.
 
-The game is developed by second year students at Mälardalens University in Sweden. See our website at grupp3.se for more info.
+The game is developed by second year students at MÃ¤lardalens University in Sweden. See our website at grupp3.se for more info.
 
 Bugs
 
@@ -18,7 +18,7 @@ Below are contact details for all students who worked on the project.
 
 Github username - Name - Email - Website
 
-MarkusTenghamn - Markus Tenghamn - mtn11005@student.mdh.se - http://MarkusTenghamn.com
+MarkusTenghamn - Markus - markus@tenghamn.com - http://tenghamn.com
 
 jsn11006 - Jonathan - jsn11006@student.mdh.se
 
